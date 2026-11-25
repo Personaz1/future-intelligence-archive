@@ -144,3 +144,30 @@ permitted under an applicable licence, covered by written permission, or
 excluded from commercial outputs. Public access and mandatory publication do
 not automatically grant commercial reuse rights. See
 [data rights and commercial boundaries](data-rights-and-commercial-boundaries.md).
+
+
+## Industrial-sector readiness profile
+
+For candidate industrial sectors in the ICV SU-SUZ dataset, report the following
+dimensions independently:
+
+1. **Planning evidence:** land-use class, partial-plan approval and publication
+   dates, approving authority and legal framework.
+2. **Land-management status:** direct/indirect/owners management model and PAI
+   award status.
+3. **Parcel reconfiguration:** reparcelation project status and registry date.
+4. **Urbanisation:** existence of an urbanisation project, works start date and
+   works acceptance date.
+5. **Physical access:** recorded road access.
+6. **Basic services:** potable water, public lighting, sewerage, stormwater
+   collection, collector and electrical installation.
+7. **Evidence age and completeness:** missing fields, publication date and
+   source snapshot.
+
+Do not combine these into a single "ready" boolean. Report states such as
+`documented_complete`, `in_progress`, `not_started`, `not_recorded` and
+`requires_authority_confirmation` per dimension.
+
+An electrical installation in this dataset is not grid headroom. It does not
+provide MW, voltage, spare transformer capacity, access rights or the identity
+of a connection node. It must never increase the grid-capacity score.
