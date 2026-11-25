@@ -31,16 +31,16 @@ This index is deliberately conservative. A repository's existence or README desc
 | SMARTHOUSE | [Repository](https://github.com/Personaz1/SMARTHOUSE) · [archived research notes](research/smarthouse.md) | Local-first home-automation skeleton / prototype | MQTT, API, configuration, and monitoring concepts; not represented as a finished autonomous home. |
 | HOUSEGUARD | [Repository](https://github.com/Personaz1/HOUSEGUARD) | Defensive smart-home security and assurance project | Contains the Guardian historical subproject. Review actual controls, threat model, and tests before making security claims. |
 | ha-mcp | [Repository](https://github.com/Personaz1/ha-mcp) | Fork / integration source | Preserve upstream attribution to homeassistant-ai/ha-mcp. |
-| Biocybernetic Skin | [Repository](https://github.com/Personaz1/biocybernetic-skin) | Long-horizon biointerface concept study | Conceptual research; no demonstrated clinical or physiological efficacy is claimed. |
+| Biocybernetic Skin | [Repository](https://github.com/Personaz1/biocybernetic-skin) · [archived research notes](research/biocybernetic-skin.md) | Long-horizon biointerface concept study | Conceptual research; no demonstrated clinical or physiological efficacy is claimed. |
 
 ## Applied software and workflows
 
 | Project | Repository / evidence | Documented status | Review notes |
 |---|---|---|---|
-| MoneyChange | [Repository](https://github.com/Personaz1/moneychange-es) | Multilingual currency-exchange web application with Strapi backend | Code and deployment configuration exist; do not infer live rates, production deployment, or regulatory compliance without current evidence. |
+| MoneyChange | [Repository](https://github.com/Personaz1/moneychange-es) · [archived research notes](research/moneychange.md) | Multilingual currency-exchange web application with Strapi backend | Code and deployment configuration exist; do not infer live rates, production deployment, or regulatory compliance without current evidence. |
 | ROMAN | [Repository](https://github.com/Personaz1/ROMAN) | Small Gemini / Streamlit administration utility | Assess current source and reproducibility before claiming operational readiness. |
-| LEGALAIR | [Repository](https://github.com/Personaz1/LEGALAIR) | Legal-document processing and review prototype | No legal accuracy guarantee. |
-| LEGALII Enterprise | [Repository](https://github.com/Personaz1/legalii-enterprise) | Local-first legal-document workflow prototype | Review the relevant branch and current implementation; no legal accuracy guarantee. |
+| LEGALAIR | [Repository](https://github.com/Personaz1/LEGALAIR) · [archived research notes](research/legaliair.md) | Legal-document processing and review prototype | No legal accuracy guarantee. |
+| LEGALII Enterprise | [Repository](https://github.com/Personaz1/legalii-enterprise) · [archived research notes](research/legalii-enterprise.md) | Local-first legal-document workflow prototype | Review the relevant branch and current implementation; no legal accuracy guarantee. |
 
 ## Representation, topology, and formal reasoning
 
@@ -48,8 +48,8 @@ This index is deliberately conservative. A repository's existence or README desc
 |---|---|---|---|
 | Quantum-Topological-Intelligence (QTI) | [Repository](https://github.com/Personaz1/Quantum-Topological-Intelligence) · [archived research notes](research/quantum-topological-intelligence.md) | Topology-inspired ML hypotheses and experiments | Not quantum computing, consciousness research, or a demonstrated replacement for neural networks. Require baselines and reproducible comparisons. |
 | TORUS | [Repository](https://github.com/Personaz1/TORUS) · [archived research notes](research/torus.md) | Topology-inspired generative-model research | Hypotheses require empirical comparison; avoid performance claims without results. |
-| LongGapsBetweenPrimes | [Repository](https://github.com/Personaz1/LongGapsBetweenPrimes) | Lean formalization work; forked source | Verify upstream attribution and theorem status in Lean source. |
-| Math Challenge Millennium | [Repository](https://github.com/Personaz1/math-challenge-millennium) | Forked Lean comparator / formalization workspaces | Do not imply a Millennium Prize problem has been solved unless a machine-checked proof and independent review support it. |
+| LongGapsBetweenPrimes | [Repository](https://github.com/Personaz1/LongGapsBetweenPrimes) · [archived research notes](research/lean-prime-gaps.md) | Lean formalization work; forked source | Verify upstream attribution and theorem status in Lean source. |
+| Math Challenge Millennium | [Repository](https://github.com/Personaz1/math-challenge-millennium) · [archived research notes](research/lean-millennium-challenges.md) | Forked Lean comparator / formalization workspaces | Do not imply a Millennium Prize problem has been solved unless a machine-checked proof and independent review support it. |
 
 ## Security, OSINT, and historical archives
 
