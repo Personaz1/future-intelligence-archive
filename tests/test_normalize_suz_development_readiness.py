@@ -66,6 +66,18 @@ class SUZReadinessTests(unittest.TestCase):
             self.assertEqual(payload["normalized"]["global_land_use"], "industrial")
             self.assertEqual(payload["readiness"]["grid_capacity"], "not_assessed")
 
+    def test_semicolon_delimited_csv_is_supported(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "input.csv"
+            target = Path(directory) / "output.jsonl"
+            source.write_text(
+                "municipio;cpm;uso;sup;f5electric\\nElche;03065;industrial;1000;Sí\\n",
+                encoding="utf-8",
+            )
+            self.assertEqual(normalize_csv(source, target), 1)
+            payload = json.loads(target.read_text(encoding="utf-8").strip())
+            self.assertEqual(payload["normalized"]["global_land_use"], "industrial")
+
     def test_csv_missing_expected_fields_fails(self):
         with tempfile.TemporaryDirectory() as directory:
             source = Path(directory) / "input.csv"
