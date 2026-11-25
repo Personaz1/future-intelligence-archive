@@ -10,7 +10,7 @@ We have verified that useful official sources exist at three distinct layers:
 2. **Access capacity:** CNMC national monthly maps plus operator-level CSV/XLSX publications. These describe indicative access capacity, not guaranteed connection rights.
 3. **System operation:** REE REData REST API for time-series demand, generation and other system indicators.
 
-This is enough to begin assembling a source-grounded national data model. It is not yet a complete Spanish grid digital twin: distribution topology, source reuse terms, data completeness and node identity reconciliation remain open.
+This is enough to begin assembling a source-grounded national data model. It is not yet a complete Spanish grid digital twin: distribution topology, source reuse terms, data completeness and node identity reconciliation remain open. Commercial reuse is a separate gate: e-distribución and i-DE publish explicit restrictions on commercial use without authorization, while REE source rights need source-specific review. Do not treat public downloads as an open commercial dataset.
 
 ## Repository map
 
@@ -49,7 +49,8 @@ This is enough to begin assembling a source-grounded national data model. It is 
 - Add planning and environmental layers.
 
 ### Phase 4 — test commercial value
-- Run a real, public-site feasibility screen.
+- Clear source rights for every customer-facing layer or exclude the layer.
+- Run a real, public-site feasibility screen using commercially reusable inputs.
 - Compare findings with existing commercial products and manual consultant workflows.
 - Seek buyer feedback before building a full platform.
 
