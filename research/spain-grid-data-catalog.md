@@ -66,9 +66,20 @@ Important: these are transmission assets, not a complete model of all distributi
 - Storage access rules have changed; capture the exact applicable resolution and effective date per dataset.
 
 ### Other DSOs
-Investigate separately:
-- e-redes: https://www.e-redes.es/
-- UFD: https://www.ufd.es/
+
+#### UFD (Naturgy)
+- Official capacity publication located: https://www.ufd.es/wp-content/uploads/2025/08/Publicacion-capacidades-25-Julio.pdf
+- A December 2024 UFD publication explains that coordinates use ETRS89 / UTM zone 29 in Lugo, Ourense, A Coruña and Pontevedra, and zone 30 in other provinces. Preserve this per-record/province CRS rule; do not treat all coordinates as one UTM zone.
+- UFD data distinguishes available, occupied and under-study capacity, and can include position/park-level detail, short-circuit limitation and physical feasibility for new connection positions.
+- The latest UFD capacity publication located in this review is dated 25 July 2025. A newer November 2026 file was not found; current cadence and latest official version require confirmation.
+
+#### Viesgo Distribución
+- Public network map: https://www.viesgodistribucion.com/mapa-interactivo-de-la-red
+- The map describes outages and scheduled works; no public node-level access-capacity dataset was verified in this review.
+
+#### Excluded from Spain scope: E-REDES
+- https://www.e-redes.pt/ is Portugal's distribution network operator, not a Spanish DSO. Do not include it in Spanish coverage totals.
+
 Do not assume common schemas, geographic coverage or commercial reuse rights.
 
 ## 3. System operation and market data
@@ -117,6 +128,8 @@ Never convert missing data to zero. Never combine demand and generation capacity
 - CNMC announcement dated 2026-04-15 confirms national generation/demand maps and monthly updates.
 - REE ArcGIS metadata confirms transmission substation point and circuit polyline layers; circuit records expose monthly/seasonal MVA transport ratings, limiting elements, status, country and stable identifiers.
 - i-DE methodology explicitly warns about interdependent nodes, non-additivity and the need for a specific connection study. Its generation publication exposes connection-point identifiers, affected transmission nodes, occupied/free positions, regulatory-commitment and 0* flags.
+- UFD has an official capacity publication dated 25 July 2025 with different semantics and a province-dependent UTM zone; the latest publication found is older than the November 2026 datasets of REE, i-DE and e-distribución.
+- E-REDES is a Portuguese operator and is excluded from Spain's DSO coverage.
 - e-distribución November 2026 pages expose separate official CSV/XLSX files for demand and generation, including the direct CSV download URLs recorded above.
 - REE's access-capacity pages expose separate monthly transmission CSV/XLSX files for demand and generation. The 3 November 2026 CSV URLs are recorded above; REE explicitly warns that nodal capacities cannot be summed nationally.
 
