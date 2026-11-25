@@ -92,7 +92,9 @@ def main() -> None:
         "publication_month": MONTH,
         "publication_date_in_filename": PUBLICATION_DATE,
         "retrieved_at_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "preservation_policy": "Original bytes are retained unchanged.",
+        "preservation_policy": "Original bytes are retained unchanged; do not redistribute without rights-holder authorization.",
+        "reuse_terms_status": "restricted",
+        "commercial_use_not_cleared": True,
         "sources": {},
     }
 
