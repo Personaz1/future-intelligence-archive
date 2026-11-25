@@ -27,7 +27,9 @@ Build a stratified sample, not a hand-picked set of attractive sites:
 2. Urban or developable sectors from the ICV SU-SUZ inventory.
 3. Rural parcels with sufficient contiguous area, subject to zoning and
    environmental exclusions.
-4. Existing generation or major infrastructure surroundings as a separate
+4. Parcels with recorded DIC declarations as a separate evidence cohort; do not
+   infer that the declaration covers a new energy project.
+5. Existing generation or major infrastructure surroundings as a separate
    context cohort, not an automatic suitability advantage.
 
 Each cohort must contain both positive and negative examples. Do not select
@@ -40,6 +42,7 @@ only sites that appear promising.
 | Cadastre parcel geometry | Stable parcel-level spatial reference and area | Ownership, title, easements or buildability |
 | ICV Planeamiento.Zonificacion | Regional planning classification / zoning context | Legally definitive status; publisher says consult binding planning documents |
 | ICV SU-SUZ | Urban/developable sector and execution-status context | That a specific parcel is immediately buildable |
+| ICV DIC | Recorded community-interest declarations for non-urban parcels | That a new project has permission; inspect the declaration and municipal licence |
 | ICV COSCV 2025 | Current-ish land-cover evidence, based on 2025 source inputs | Legal zoning or permitted use |
 | Protected areas | Environmental screening | Full permit feasibility |
 | Flood risk | Exposure / engineering-review flag | Detailed parcel-scale hydraulic safety |
