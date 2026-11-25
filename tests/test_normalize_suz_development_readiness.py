@@ -71,7 +71,7 @@ class SUZReadinessTests(unittest.TestCase):
             source = Path(directory) / "input.csv"
             target = Path(directory) / "output.jsonl"
             source.write_text(
-                "municipio;cpm;uso;sup;f5electric\\nElche;03065;industrial;1000;Sí\\n",
+                "municipio;cpm;uso;sup;f5electric\nElche;03065;industrial;1000;Sí\n",
                 encoding="utf-8",
             )
             self.assertEqual(normalize_csv(source, target), 1)
