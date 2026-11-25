@@ -19,7 +19,7 @@ This index is deliberately conservative. A repository's existence or README desc
 | Project | Repository / evidence | Documented status | Review notes |
 |---|---|---|---|
 | Guardian | [HOUSEGUARD/GUARDIAN](https://github.com/Personaz1/HOUSEGUARD/tree/main/GUARDIAN) · [archived research notes](research/guardian.md) · [historical source map](research/guardian-history-and-source-map.md) · [original source map](https://github.com/Personaz1/HOUSEGUARD/blob/main/GUARDIAN/HISTORY_AND_SOURCE_MAP.md) | Historical agent prototype and architecture record | Nested in HOUSEGUARD, not a separate repository. Inspect immutable historical commits and distinguish implemented orchestration from planned capabilities. |
-| decentralized-ai-child | Private repository (not publicly inspectable) | Experimental multi-model / distributed architecture; currently private | Not publicly inspectable while private. Do not infer self-evolution, consensus, self-replication, or autonomous improvement from feature labels. |
+| decentralized-ai-child | [Private source repository](https://github.com/Personaz1/decentralized-ai-child) · [technical research dossier](research/decentralized-ai-child.md) · [preserved original notes](research/decentralized-ai-child-original-notes.md) | Experimental multi-model / distributed architecture; source snapshot reviewed | Source is private, but its research content is now summarized publicly with provenance. Modules for consensus, self-evolution, and self-replication are experimental; several visible paths are placeholders or incomplete. |
 | TORI | [Repository](https://github.com/Personaz1/TORI) · [archived research notes](research/tori.md) · [original notes](https://github.com/Personaz1/TORI/blob/main/AGI_RESEARCH_NOTES.md) | Placeholder / future synthesis point | No unified AGI implementation is claimed. |
 | oh-my-codex | [Repository](https://github.com/Personaz1/oh-my-codex) | Fork / upstream tooling | Attribute upstream work to Yeachan-Heo; distinguish local modifications from inherited code. |
 | claude-code | [Repository](https://github.com/Personaz1/claude-code) | Fork / source snapshot | Upstream identified as ultraworkers/claw-code in workspace notes; verify current provenance and redistribution rights before promoting. |
@@ -71,6 +71,7 @@ These repositories are preserved as historical research context. Their presence 
 ## Review priorities
 
 1. Start with the Guardian history map and inspect the cited commits, not only current files.
+2. Read the decentralized-ai-child dossier alongside its source repository; the archive records a reviewed source snapshot and explicit integration gaps.
 2. For each software project, identify executable entry points, dependencies, tests, configuration, and reproducible run instructions.
 3. For research projects, identify hypotheses, baselines, datasets, evaluation protocol, and negative results.
 4. Verify fork lineage and licenses before attributing code.
