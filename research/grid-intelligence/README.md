@@ -23,6 +23,7 @@ This is enough to begin assembling a source-grounded national data model. It is 
 - [OSM power infrastructure fetcher](../../experiments/fetch_osm_power_infrastructure.py) — retrieves a pilot area's volunteered power infrastructure under ODbL 1.0.
 - [ICV land-layer fetcher](../../experiments/fetch_gva_land_layers.py) — downloads CC BY DIC records, planning zoning, urban/developable land inventory and 2025 land-cover data for the Valencian Community.
 - [Alicante pilot protocol](alicante-pilot-protocol.md) — stratified sample, spatial QA, source semantics and go/no-go criteria.
+- [Product wedge: industrial site readiness](product-wedge-industrial-site-readiness.md) — an evidence-dossier service for energy-intensive site acquisition.
 - [REE access-capacity fetcher](../../experiments/fetch_ree_access_capacity.py) — preserves separate transmission demand/generation CSVs with SHA-256 manifests.
 - [REE acquisition status](ree-acquisition-status.md) — verified source facts, unverified steps and validation gates.
 - [Operator coverage matrix](operator-coverage-matrix.md) — current publication coverage and known gaps across Spanish DSOs.
