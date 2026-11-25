@@ -26,6 +26,7 @@ This is enough to begin assembling a source-grounded national data model. It is 
 - [Site screening specification](site-screening-spec.md) — evidence-based first-pass site assessment for generation, storage and large demand.
 - [Data rights and commercial boundaries](data-rights-and-commercial-boundaries.md) — source-specific reuse restrictions and licensing gates.
 - [Competitive benchmark: Rare Context](competitive-benchmark-rare-context.md) — existing market coverage, legal approach and differentiation hypotheses.
+- [Licensed foundation stack — Spain](licensed-foundation-stack-spain.md) — commercially reusable geospatial, cadastral, environmental and energy-context sources.
 
 ## Build sequence
 
