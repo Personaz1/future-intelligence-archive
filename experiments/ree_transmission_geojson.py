@@ -162,6 +162,8 @@ def main() -> None:
                 "envelopes; envelope coverage is not a legal asset boundary."
             ),
         },
+        "reuse_terms_status": "unknown",
+        "commercial_use_not_cleared": True,
         "limitations": [
             "Transmission assets only; distribution networks are not included.",
             "Published transport ratings in MVA are not available connection "
