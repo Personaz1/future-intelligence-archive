@@ -160,6 +160,10 @@ Never convert missing data to zero. Never combine demand and generation capacity
 This catalog should be expanded only after each new source has been opened and its schema, cadence and terms inspected.
 
 ### Comunitat Valenciana — land and planning layers with CC BY metadata
+- **Declaraciones de Interés Comunitario (DIC):** https://dadesobertes.gva.es/dataset/declaraciones-de-interes-comunitario-de-la-comunitat-valenciana — CC BY; WFS and GeoPackage; catalogue update frequency depends on source records. Represents non-urban parcels with a recorded declaration of community interest under Valencian planning law. The publisher says the layer is informational and based on administrative case files. A DIC record is not blanket permission for a new energy project; verify the specific declaration, its conditions and municipal licence.
+  - WFS endpoint: `https://terramapas.icv.gva.es/0702_Planeamiento`
+  - Feature type: `DeclaracionInteresComunitario`
+  - GeoPackage WFS request: `https://terramapas.icv.gva.es/0702_Planeamiento?outputformat=gpkg&request=GetFeature&service=WFS&typename=DeclaracionInteresComunitario&version=2.0.0`
 - **Urban planning zoning (Planeamiento.Zonificacion):** https://dadesobertes.gva.es/es/dataset/planeamiento-urbanistico-de-la-comunitat-valenciana-zonificacion-urbanistica — CC BY; WFS and GeoPackage; bianual catalogue frequency; compiled from approved planning documents at scales 1:500–1:25,000. The publisher explicitly says this layer is informative and directs users to the underlying planning instruments and competent authority for legally valid status.
   - WFS endpoint: `https://terramapas.icv.gva.es/0702_Planeamiento`
   - Feature type: `Planeamiento.Zonificacion`
