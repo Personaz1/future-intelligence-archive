@@ -76,6 +76,23 @@ only sites that appear promising.
 8. Export a report with every source feature, transformation, assumption and
    unresolved issue.
 
+## Development-sector readiness signal
+
+The SU-SUZ attribute dictionary exposes a useful industrial-site maturity
+signal: global land use, sector area, buildable floor area, partial-plan
+approval/publication dates, approving authority, PAI award, reparcelation stage,
+urbanisation project and works dates, road access, potable water, electricity,
+sewerage and stormwater infrastructure.
+
+Build a separate readiness profile from these fields. Keep planning approval,
+land management, reparcelation, urbanisation and utility-service readiness as
+independent dimensions. In particular, `electrical_installation=yes` means
+only that an electrical installation is recorded; it says nothing about spare
+MW, voltage, connection rights or capacity at the relevant grid node.
+
+The source attribute dictionary is published here:
+https://icvficherosweb.icv.gva.es/04/geonetwork/definicion_datos/0702_inventario_su_suz_mdatos.pdf
+
 ## Evaluation
 
 Measure:
