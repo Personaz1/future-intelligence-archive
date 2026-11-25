@@ -81,10 +81,10 @@ These repositories are preserved as historical research context. Their presence 
 
 1. Start with the Guardian history map and inspect the cited commits, not only current files.
 2. Read the decentralized-ai-child dossier alongside its source repository; the archive records a reviewed source snapshot and explicit integration gaps.
-2. For each software project, identify executable entry points, dependencies, tests, configuration, and reproducible run instructions.
-3. For research projects, identify hypotheses, baselines, datasets, evaluation protocol, and negative results.
-4. Verify fork lineage and licenses before attributing code.
-5. Record the exact repository, branch, commit SHA, file path, and date for every material conclusion.
+3. For each software project, identify executable entry points, dependencies, tests, configuration, and reproducible run instructions.
+4. For research projects, identify hypotheses, baselines, datasets, evaluation protocol, and negative results.
+5. Verify fork lineage and licenses before attributing code.
+6. Record the exact repository, branch, commit SHA, file path, and date for every material conclusion.
 
 ## Known limitations of this index
 
