@@ -31,6 +31,26 @@ Keep source observations immutable and preserve provenance. Build normalized ent
 
 A substation can contain multiple nodes/busbars at different voltage levels. Never collapse them into one capacity number.
 
+### ElectricalInfluenceZone
+- zone_id (internal stable identifier)
+- source_operator_id
+- source_zone_id
+- canonical_name
+- methodology_version
+- geometry_ref (nullable)
+- source_record_ref
+
+### NodeZoneMembership
+- node_id
+- zone_id
+- membership_type: electrical_influence | predominant_affected_transmission_node | other
+- source_publication_date
+- source_record_ref
+- match_confidence
+
+A node may be influenced by a wider electrical zone and by a predominantly
+affected transmission node. These are not necessarily the same relationship.
+
 ### GridCircuit
 - circuit_id
 - source_operator_id
@@ -65,6 +85,24 @@ Use this entity for connection/access-capacity observations, not physical circui
 - connection_point_source_id / connection_point_name (nullable)
 - source_coordinates (nullable; preserve original CRS and coordinate fields)
 - caveat_codes[]
+
+### CapacityCriterionObservation
+Record criterion-level results when the source publishes them; do not retain
+only the final minimum if the underlying components are available.
+- observation_id
+- node_id / zone_id
+- direction: demand | generation | storage | hybrid
+- technology_class (nullable; e.g. MPE / MGES)
+- criterion: short_circuit_power | static | dynamic | other
+- value
+- unit: MW
+- scenario / horizon
+- source_publication_date
+- source_record_ref
+
+The final access-capacity result can be the minimum of applicable criterion
+results. Preserve the criterion inputs so a user can understand what limits a
+node rather than seeing only one opaque number.
 
 ### CircuitTransportRatingObservation
 Use this entity for a physical circuit's published transport/thermal rating. It is not a connection-capacity observation.
@@ -196,3 +234,17 @@ Model these flags and identifiers explicitly. In particular:
   remain separate observations.
 - preserve the source UTM coordinates and defer spatial joins until the exact
   coordinate reference system is verified.
+
+
+## Topology and criterion-level access logic
+
+REE describes access capacity as a nodal or zonal result derived from several
+criteria. Its demand methodology includes short-circuit strength (including
+WSCR for power-electronic demand), static security and dynamic stability.
+Generation methodology likewise uses short-circuit, static and dynamic
+criteria, with technology distinctions such as MPE and MGES. The binding result
+is the minimum of the applicable criteria.
+
+Therefore the model has explicit electrical-influence zones, node-zone
+relationships and criterion-level observations. A nearest-substation join alone
+cannot represent these electrical dependencies.
