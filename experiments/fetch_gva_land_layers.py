@@ -29,6 +29,7 @@ SOURCES = {
             "&typename=InventarioSuSuz&version=2.0.0"
         ),
         "filename": "gva_su_suz_inventory.gpkg",
+        "signature": b"SQLite format 3\\x00",
         "dataset": "Inventario de suelo urbano y urbanizable (SU-SUZ)",
         "license": "Creative Commons Attribution (CC BY)",
         "update_note": "Portal reports bianual update frequency",
@@ -45,6 +46,7 @@ SOURCES = {
             "&typename=Planeamiento.Zonificacion&version=2.0.0"
         ),
         "filename": "gva_planning_zoning.gpkg",
+        "signature": b"SQLite format 3\\x00",
         "dataset": "Planeamiento Urbanístico de la Comunitat Valenciana: Zonificación urbanística",
         "license": "Creative Commons Attribution (CC BY)",
         "update_note": "Portal reports bianual update frequency",
@@ -61,6 +63,7 @@ SOURCES = {
             "?formato=CV%28GPKG%29&tipo=directa"
         ),
         "filename": "gva_coscv_2025_25830_gpkg.zip",
+        "signature": b"PK\\x03\\x04",
         "dataset": "Cartografía de Ocupación del Suelo de la Comunitat Valenciana (COSCV), edition 2025",
         "license": "Creative Commons Attribution (CC BY)",
         "update_note": "2025 historical edition; catalogue marks frequency as historical data",
@@ -88,6 +91,16 @@ def build_session() -> requests.Session:
         {"User-Agent": "GridIntelligenceResearch/0.1 (ICV public data acquisition)"}
     )
     return session
+
+
+def validate_file_signature(path: Path, expected: bytes) -> None:
+    with path.open("rb") as stream:
+        actual = stream.read(len(expected))
+    if actual != expected:
+        path.unlink(missing_ok=True)
+        raise RuntimeError(
+            f"Unexpected file signature for {path.name}; download may be an HTML error page"
+        )
 
 
 def sha256_file(path: Path) -> str:
@@ -131,6 +144,7 @@ def main() -> None:
                         output.write(chunk)
                         digest.update(chunk)
                         byte_count += len(chunk)
+            validate_file_signature(path, source["signature"])
             record = {
                 "source_id": source_id,
                 "dataset": source["dataset"],
