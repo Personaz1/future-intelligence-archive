@@ -29,6 +29,7 @@ This repository is the **public research layer**. The private `openclaw-workspac
 - [Decentralized AI Child: technical dossier](research/decentralized-ai-child.md)
 - [Decentralized AI Child: original research notes](research/decentralized-ai-child-original-notes.md)
 - [Collective Intelligence as a System Property](research/collective-intelligence-as-system-property.md)
+- [Project 01: Independent Evidence and Collective Intelligence](research/project-01-independent-evidence-and-collective-intelligence.md)
 
 ## Scope
 
