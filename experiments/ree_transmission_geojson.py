@@ -24,8 +24,8 @@ BASE = (
     "WEBREE/Instalaciones_RdT_WEBREE/MapServer"
 )
 LAYERS = {"substations": 3, "circuits": 11}
-# Broad Iberian/Spanish envelope in WGS84; includes Balearics and Canaries only
-# partially, so this first utility is a mainland/nearby pilot, not national coverage.
+# Broad mainland Spain + Balearic envelope in WGS84; excludes the Canary Islands.
+# This first utility is a regional pilot, not full national coverage.
 BBOX = "-10,34,5,45"
 
 
