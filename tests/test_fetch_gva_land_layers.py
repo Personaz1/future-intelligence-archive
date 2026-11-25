@@ -52,6 +52,15 @@ class GVALandLayerTests(unittest.TestCase):
             path.write_text("municipio,uso,sup,f5electric\nElche,industrial,1000,Sí\n", encoding="utf-8")
             validate_csv_headers(path, ["municipio", "uso", "sup", "f5electric"])
 
+    def test_csv_header_validation_accepts_semicolon_delimiter(self):
+        import tempfile
+        from pathlib import Path
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "valid.csv"
+            path.write_text("municipio;uso;sup;f5electric\\nElche;industrial;1000;Sí\\n", encoding="utf-8")
+            validate_csv_headers(path, ["municipio", "uso", "sup", "f5electric"])
+
     def test_download_file_signatures(self):
         self.assertEqual(SOURCES["su_suz"]["signature"], b"SQLite format 3\x00")
         self.assertEqual(SOURCES["zoning"]["signature"], b"SQLite format 3\x00")
