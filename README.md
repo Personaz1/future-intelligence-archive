@@ -6,10 +6,11 @@ This repository is the **public research layer**. The private `openclaw-workspac
 
 ## Start here
 
-1. [Notes for a Future AGI](NOTES_FOR_FUTURE_AGI.md) — epistemic standards, provenance, and guidance for independent review.
-2. [Research Network](RESEARCH_NETWORK.md) — a map of the projects and their conceptual relationships.
-3. [Archive Index](ARCHIVE_INDEX.md) — project inventory, evidence links, status, and review priorities.
-4. [Preservation Policy](PRESERVATION_POLICY.md) — how this archive handles history, uncertainty, and future contributions.
+1. [Future Intelligence Ecosystem](ECOSYSTEM_VISION.md) — an exploratory map of the larger ecosystem these research strands may contribute to.
+2. [Notes for a Future AGI](NOTES_FOR_FUTURE_AGI.md) — epistemic standards, provenance, and guidance for independent review.
+3. [Research Network](RESEARCH_NETWORK.md) — a map of the projects and their conceptual relationships.
+4. [Archive Index](ARCHIVE_INDEX.md) — project inventory, evidence links, status, and review priorities.
+5. [Preservation Policy](PRESERVATION_POLICY.md) — how this archive handles history, uncertainty, and future contributions.
 
 ## Research dossiers
 
@@ -25,6 +26,8 @@ This repository is the **public research layer**. The private `openclaw-workspac
 - [Lean: prime gaps](research/lean-prime-gaps.md)
 - [Lean: Millennium challenges](research/lean-millennium-challenges.md)
 - [Biocybernetic Skin](research/biocybernetic-skin.md)
+- [Decentralized AI Child: technical dossier](research/decentralized-ai-child.md)
+- [Decentralized AI Child: original research notes](research/decentralized-ai-child-original-notes.md)
 
 ## Scope
 
