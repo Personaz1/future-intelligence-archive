@@ -22,6 +22,22 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 SOURCES = {
+    "dic": {
+        "url": (
+            "https://terramapas.icv.gva.es/0702_Planeamiento"
+            "?outputformat=gpkg&request=GetFeature&service=WFS"
+            "&typename=DeclaracionInteresComunitario&version=2.0.0"
+        ),
+        "filename": "gva_declaraciones_interes_comunitario.gpkg",
+        "dataset": "Declaraciones de Interés Comunitario de la Comunitat Valenciana",
+        "license": "Creative Commons Attribution (CC BY)",
+        "update_note": "Catalogue says update frequency depends on source records",
+        "limitations": [
+            "Features represent non-urban parcels with a recorded declaration of community interest.",
+            "The publisher states that the layer is informative and derives from administrative case files.",
+            "A DIC record is not a blanket permission for a new energy project; verify the specific declaration, conditions and municipal licence.",
+        ],
+    },
     "su_suz": {
         "url": (
             "https://terramapas.icv.gva.es/0702_Planeamiento"
