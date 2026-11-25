@@ -10,7 +10,9 @@ REE ArcGIS REST service:
 - Layer 3: `Subestaciones` (point geometry).
 - Layer 11: `Circuitos` (polyline geometry).
 - Both expose ArcGIS REST query endpoints; supported output formats include JSON and GeoJSON.
-- Circuit layer uses `TENSION` classes including 30, 66, 110, 132, 150, 220 and 400 kV.
+- Circuit layer exposes `ID`, `CODIGO_BDI`, `CODIGO_MRID`, `CODIGO_EIC`, `TENSION`, `ESTADO`, `PAIS`, owner/operator fields and circuit endpoint/position fields.
+- It also exposes monthly transport-rating fields `CAP_ENE` ... `CAP_DIC` in **MVA**, plus matching `ELEM_LIM_*` limiting-element fields. Seasonal fields `CAP_PRI`, `CAP_VER`, `CAP_OTO`, `CAP_INV` also exist.
+- These are circuit transport ratings, not spare connection capacity. They must not be re-labelled as MW or summed into a hosting-capacity estimate.
 - Substation layer contains identifiers/names and owner/operator attributes. Check its metadata before relying on individual fields.
 - Layer metadata: https://georedservices.ree.es/arcgis_ags1/rest/services/WEBREE/Instalaciones_RdT_WEBREE/MapServer/layers
 
@@ -46,8 +48,11 @@ Important: these are transmission assets, not a complete model of all distributi
 ### e-distribución
 - Generation: https://www.edistribucion.com/es/red-electrica/nodos-capacidad-red/capacidad-generacion.html
 - Demand: https://www.edistribucion.com/es/red-electrica/nodos-capacidad-red/capacidad-demanda.html
-- November 2026 generation page advertises CSV/XLSX publications, monthly updates and warns that capacities are not cumulative/simultaneous; connection of one generator may reduce capacity at nearby nodes.
-- The demand page says official values are in CSV/XLSX; map is informative.
+- November 2026 generation and demand pages both advertise downloadable CSV/XLSX publications, with monthly updates. Official November CSVs are linked from the pages:
+  - Demand: https://www.edistribucion.com/content/dam/edistribucion/conexion-a-la-red/descargables/nodos/demanda/202611/2026_11_04_R1299_demanda.csv
+  - Generation: https://www.edistribucion.com/content/dam/edistribucion/conexion-a-la-red/descargables/nodos/generacion/202611/2026_11_04_R1299_generaci%C3%B3n.csv
+- The demand publication also includes EASA and Ceuta distributor files. The generation page includes corresponding e-distribución, EASA and Ceuta publications.
+- Both pages say the map is informative, values are indicative, nodes are interdependent and capacity is not cumulative/simultaneous. The published capacity does not include possible constraints in other distributors or the transmission network.
 - Storage access rules have changed; capture the exact applicable resolution and effective date per dataset.
 
 ### Other DSOs
@@ -100,8 +105,8 @@ Never convert missing data to zero. Never combine demand and generation capacity
 ## 6. Verified source notes
 
 - CNMC announcement dated 2026-04-15 confirms national generation/demand maps and monthly updates.
-- REE ArcGIS metadata confirms transmission substation point and circuit polyline layers; circuit voltage categories are exposed as attributes.
+- REE ArcGIS metadata confirms transmission substation point and circuit polyline layers; circuit records expose monthly/seasonal MVA transport ratings, limiting elements, status, country and stable identifiers.
 - i-DE methodology explicitly warns about interdependent nodes, non-additivity and the need for a specific connection study.
-- e-distribución November 2026 page exposes downloadable CSV/XLSX capacity files and monthly update history.
+- e-distribución November 2026 pages expose separate official CSV/XLSX files for demand and generation, including the direct CSV download URLs recorded above.
 
 This catalog should be expanded only after each new source has been opened and its schema, cadence and terms inspected.
