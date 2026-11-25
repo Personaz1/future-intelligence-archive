@@ -160,6 +160,10 @@ Never convert missing data to zero. Never combine demand and generation capacity
 This catalog should be expanded only after each new source has been opened and its schema, cadence and terms inspected.
 
 ### Comunitat Valenciana — land and planning layers with CC BY metadata
+- **Urban planning zoning (Planeamiento.Zonificacion):** https://dadesobertes.gva.es/es/dataset/planeamiento-urbanistico-de-la-comunitat-valenciana-zonificacion-urbanistica — CC BY; WFS and GeoPackage; bianual catalogue frequency; compiled from approved planning documents at scales 1:500–1:25,000. The publisher explicitly says this layer is informative and directs users to the underlying planning instruments and competent authority for legally valid status.
+  - WFS endpoint: `https://terramapas.icv.gva.es/0702_Planeamiento`
+  - Feature type: `Planeamiento.Zonificacion`
+  - GeoPackage WFS request: `https://terramapas.icv.gva.es/0702_Planeamiento?outputformat=gpkg&request=GetFeature&service=WFS&typename=Planeamiento.Zonificacion&version=2.0.0`
 - **SU-SUZ urban/developable land inventory:** https://dadesobertes.gva.es/es/dataset/inventario-de-suelo-urbano-y-urbanizable-su-suz-en-la-comunitat-valenciana — CC BY; WFS, GeoPackage and CSV resources. The inventory describes urban land under execution units and developable sectors, with planning/execution status. Catalogue frequency: bianual. Publisher explicitly says the information is informative; consult the binding planning instrument for legal status.
   - WFS endpoint: `https://terramapas.icv.gva.es/0702_Planeamiento`
   - Feature type: `InventarioSuSuz`
