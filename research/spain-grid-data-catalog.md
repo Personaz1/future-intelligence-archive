@@ -41,6 +41,7 @@ Important: these are transmission assets, not a complete model of all distributi
   - Demand: https://www.ree.es/sites/default/files/12_CLIENTES/Documentos/2026_11_03_GRT_demanda.csv
   - Generation: https://www.ree.es/sites/default/files/12_CLIENTES/Documentos/2026_11_03_GRT_generacion.csv
 - REE's demand methodology evaluates active power simultaneously at a node or zone, using short-circuit power, static and dynamic criteria; it explicitly says national sums are not meaningful because nodes share zones of influence.
+- **Reuse warning:** ESIOS/API legal terms explicitly prohibit commercial use of ESIOS data. The specific terms for REE's GIS layers and access-capacity CSV files remain unverified; do not automatically apply or ignore the ESIOS terms.
 - Generation access is technology-specific (MGES/MPE) and the granted access is not a guarantee of generation/evacuation in real-time operation.
 - Capture each publication's issue date, scenario, node identifier, voltage, technology/direction, units and methodology.
 
@@ -51,6 +52,7 @@ Important: these are transmission assets, not a complete model of all distributi
 - The May 2026 generation PDF exposes a useful schema: distributor code, province, municipality, UTM X/Y, substation, voltage, available MW, regulatory commitment flag, occupied MW, pending admitted capacity by PV/wind/other, occupied/free positions, affected transmission node, short-circuit-limited flag, 0* flag, comments, connection-point name and connection-point ID. Treat this as a schema discovery, not proof that every month's schema is unchanged.
 - The connection-point identifier and affected transmission node are valuable candidate join keys, but require reconciliation against REE/DSO GIS IDs. Coordinate CRS must be confirmed before spatial joins.
 - The published capacity is indicative; individual applications receive specific study.
+- **Reuse warning:** i-DE's legal notice prohibits commercial use of site information and requires authorization for commercial reproduction, transformation, distribution or public communication. The November files are public downloads, not an established commercial licence.
 - i-DE says node capacities are interdependent and cannot be summed across nodes or voltage levels at a substation.
 - Its demand methodology accounts for facilities scheduled for commissioning in the current year and included in the approved investment plan, but excludes future reinforcements.
 - A node with a zero published value may have a special "Nudo 0" interpretation; preserve the flag rather than flattening it into a simple numeric zero.
@@ -63,6 +65,7 @@ Important: these are transmission assets, not a complete model of all distributi
   - Generation: https://www.edistribucion.com/content/dam/edistribucion/conexion-a-la-red/descargables/nodos/generacion/202611/2026_11_04_R1299_generaci%C3%B3n.csv
 - The demand publication also includes EASA and Ceuta distributor files. The generation page includes corresponding e-distribución, EASA and Ceuta publications.
 - Both pages say the map is informative, values are indicative, nodes are interdependent and capacity is not cumulative/simultaneous. The published capacity does not include possible constraints in other distributors or the transmission network.
+- **Reuse warning:** e-distribución's legal notice restricts content to private use and expressly prohibits commercial use, copying, distribution or modification without rights-holder authorization. Public CSV download is not a commercial licence.
 - Storage access rules have changed; capture the exact applicable resolution and effective date per dataset.
 
 ### Other DSOs
