@@ -4,6 +4,8 @@
 **Maintainer:** Personaz1  
 **Purpose:** navigation and provenance for a connected body of independent engineering and research work.
 
+The broader conceptual direction is described in [A Possible Future Intelligence Ecosystem](ECOSYSTEM_VISION.md). This is an exploratory synthesis, not a claim that the listed projects are integrated.
+
 This index is deliberately conservative. A repository's existence or README description is not proof that its proposed capabilities work. Status labels below describe the current documented state, not an independent certification.
 
 ## How to interpret status
