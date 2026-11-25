@@ -22,6 +22,7 @@ This is enough to begin assembling a source-grounded national data model. It is 
 - [e-distribución capacity fetcher](../../experiments/fetch_edistribucion_capacity.py) — preserves monthly demand/generation CSV snapshots with SHA-256 manifests.
 - [REE access-capacity fetcher](../../experiments/fetch_ree_access_capacity.py) — preserves separate transmission demand/generation CSVs with SHA-256 manifests.
 - [REE acquisition status](ree-acquisition-status.md) — verified source facts, unverified steps and validation gates.
+- [Operator coverage matrix](operator-coverage-matrix.md) — current publication coverage and known gaps across Spanish DSOs.
 
 ## Build sequence
 
