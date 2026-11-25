@@ -1,0 +1,119 @@
+# Grid Intelligence — canonical data model
+Status: initial schema, 2026-11-25
+
+## Design principle
+
+Keep source observations immutable and preserve provenance. Build normalized entities as derived views. Do not overwrite source facts with estimates or inferred joins.
+
+## Core entities
+
+### NetworkOperator
+- operator_id
+- legal_name
+- role: transmission | distribution
+- country
+- service_area_geometry_ref
+- source_url
+
+### GridNode
+- node_id (internal stable identifier)
+- source_operator_id
+- source_node_id
+- canonical_name
+- aliases[]
+- voltage_kv
+- node_type: substation_busbar | connection_node | other
+- geometry (point)
+- geometry_crs
+- municipality / province / autonomous_community
+- valid_from / valid_to
+- identity_match_confidence
+
+A substation can contain multiple nodes/busbars at different voltage levels. Never collapse them into one capacity number.
+
+### GridCircuit
+- circuit_id
+- source_operator_id
+- source_circuit_id
+- name
+- voltage_kv
+- geometry (LineString/MultiLineString)
+- endpoints (node IDs, nullable unless verified)
+- circuit_type: overhead | underground | submarine | unknown
+- source_record_ref
+
+### CapacityObservation
+- observation_id
+- node_id
+- operator_id
+- direction: demand | generation | storage | hybrid | unknown
+- technology (nullable)
+- capacity_type: available | occupied | requested | granted | commissioned | operational | other
+- value
+- unit: MW | MVA | kW
+- source_publication_date
+- retrieved_at
+- methodology_version
+- scenario
+- source_record_ref
+- caveat_codes[]
+
+### ConnectionPositionObservation
+- node_id
+- voltage_kv
+- free_positions
+- occupied_positions
+- source_publication_date
+- source_record_ref
+
+### SystemMetric
+- geography_id
+- metric: demand | generation | price | curtailment | exchange | other
+- value
+- unit: MW | MWh | EUR_per_MWh | other
+- interval_start / interval_end
+- source and source_record_ref
+
+### Site
+- site_id
+- geometry
+- intended_use
+- requested_power_mw
+- direction: demand | generation | storage
+- project_stage
+- constraints[]
+
+### Evidence
+Every displayed claim must point to one or more Evidence records:
+- evidence_id
+- source_url
+- source_publisher
+- source_timestamp
+- retrieval_timestamp
+- exact source field/value
+- transformation steps
+- parser/version/checksum
+- limitations
+
+## Required semantic distinctions
+
+- MW = power; MWh = energy over time; MVA = apparent power. Never silently equate them.
+- Installed capacity is not instantaneous output.
+- Available access capacity is not thermal rating or guaranteed connection capacity.
+- Granted access is not necessarily commissioned or operational.
+- Demand access and generation access are different directions and methodologies.
+- Storage may be modelled as demand, generation, or hybrid depending on regulation and operating mode; preserve source treatment.
+- Zero, missing, not assessed, reserved and not applicable are distinct states.
+- A substation's multiple busbars/voltage levels are distinct nodes.
+- Adjacent nodes may share constraints; published MW values are not additive by default.
+
+## Derived products (not source facts)
+
+- nearest substations/circuits to a site;
+- capacity signal by direction/technology and publication date;
+- capacity trend by node across monthly snapshots;
+- network-context features (nearby nodes, voltage levels, circuit corridors);
+- screening score with explainable components and confidence;
+- data completeness and source disagreement flags.
+
+Every derived result must carry its inputs, calculation version, date and uncertainty. Never label a screening score as a probability of receiving a permit unless calibrated against observed outcomes.
