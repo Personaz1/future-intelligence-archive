@@ -114,3 +114,17 @@ evacuation. Both pages say individual studies prevail.
 These findings make a single generic DSO parser unsafe. Use operator-specific
 adapters that emit the same canonical entities while preserving each source's
 flags, units, CRS and publication semantics.
+
+
+## Commercially reusable pilot infrastructure layer
+
+An OSM Overpass acquisition utility has been added:
+`experiments/fetch_osm_power_infrastructure.py`. It retrieves power-tagged
+nodes/ways/relations for a WGS84 bounding box, stores the raw response and
+records a checksum, tag counts and ODbL 1.0 attribution in its manifest.
+
+The default envelope is a pilot-scale Alicante area, not national coverage.
+The utility has not yet been run against Overpass. OSM is volunteered mapping:
+it can provide candidate infrastructure geometry, but cannot establish
+authoritative asset status, electrical connectivity or available capacity.
+Any distributed derivative database must comply with ODbL share-alike terms.
