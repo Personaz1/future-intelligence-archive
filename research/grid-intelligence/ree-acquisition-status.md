@@ -132,9 +132,10 @@ Any distributed derivative database must comply with ODbL share-alike terms.
 
 ## Valencian planning and land-cover acquisition
 
-Two regional datasets have now been verified at their publisher pages and added
+Three regional datasets have now been verified at their publisher pages and added
 to the licensed pilot stack:
 
+- ICV **Planeamiento.Zonificacion**: CC BY; urban planning zoning/classification compiled from approved planning documents at scales 1:500–1:25,000. Catalogue frequency is bianual. Publisher explicitly says the layer is informative and directs users to underlying planning instruments and the competent authority for legally valid status. WFS feature type `Planeamiento.Zonificacion`.
 - ICV **SU-SUZ**: CC BY; urban land under execution units and developable
   sectors, with planning/execution status. Publisher catalogue says bianual
   update frequency and explicitly labels the information informative. WFS
@@ -145,7 +146,7 @@ to the licensed pilot stack:
   dated 2025 in forest areas. The portal labels this edition historical data.
   Complete GeoPackage ZIP URL is recorded in the source catalog.
 
-Acquisition utility: `experiments/fetch_gva_land_layers.py`.
+Acquisition utility: `experiments/fetch_gva_land_layers.py` (now supports `zoning`, `su_suz` and `coscv_2025`).
 Offline metadata/hash tests: `tests/test_fetch_gva_land_layers.py`.
 
 **Status:** publisher pages, CC BY metadata and download endpoints verified.
