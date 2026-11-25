@@ -19,6 +19,12 @@ This repository is the **public research layer**. The private `openclaw-workspac
 - [Quantum-Topological-Intelligence](research/quantum-topological-intelligence.md)
 - [TORUS](research/torus.md)
 - [TORI](research/tori.md)
+- [MoneyChange](research/moneychange.md)
+- [LEGALAIR](research/legaliair.md)
+- [LEGALII Enterprise](research/legalii-enterprise.md)
+- [Lean: prime gaps](research/lean-prime-gaps.md)
+- [Lean: Millennium challenges](research/lean-millennium-challenges.md)
+- [Biocybernetic Skin](research/biocybernetic-skin.md)
 
 ## Scope
 
