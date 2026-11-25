@@ -28,9 +28,9 @@ class GVALandLayerTests(unittest.TestCase):
         self.assertTrue(any("not a legal zoning" in item for item in source["limitations"]))
 
     def test_download_file_signatures(self):
-        self.assertEqual(SOURCES["su_suz"]["signature"], b"SQLite format 3\\x00")
-        self.assertEqual(SOURCES["zoning"]["signature"], b"SQLite format 3\\x00")
-        self.assertEqual(SOURCES["coscv_2025"]["signature"], b"PK\\x03\\x04")
+        self.assertEqual(SOURCES["su_suz"]["signature"], b"SQLite format 3\x00")
+        self.assertEqual(SOURCES["zoning"]["signature"], b"SQLite format 3\x00")
+        self.assertEqual(SOURCES["coscv_2025"]["signature"], b"PK\x03\x04")
 
     def test_invalid_signature_deletes_bad_download(self):
         import tempfile
@@ -40,7 +40,7 @@ class GVALandLayerTests(unittest.TestCase):
             path = Path(directory) / "bad.gpkg"
             path.write_bytes(b"<html>error</html>")
             with self.assertRaises(RuntimeError):
-                validate_file_signature(path, b"SQLite format 3\\x00")
+                validate_file_signature(path, b"SQLite format 3\x00")
             self.assertFalse(path.exists())
 
     def test_sha256_file(self):
