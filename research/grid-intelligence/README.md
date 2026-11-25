@@ -20,6 +20,7 @@ This is enough to begin assembling a source-grounded national data model. It is 
 - [REE transmission GeoJSON extractor](../../experiments/ree_transmission_geojson.py) — paginated extractor covering mainland/Balearics/Ceuta/Melilla and the Canary Islands.
 - [REE circuit-rating analyzer](../../experiments/analyze_ree_circuit_ratings.py) — monthly MVA distributions and limiting-element counts; deliberately does not sum ratings.
 - [e-distribución capacity fetcher](../../experiments/fetch_edistribucion_capacity.py) — preserves monthly demand/generation CSV snapshots with SHA-256 manifests.
+- [OSM power infrastructure fetcher](../../experiments/fetch_osm_power_infrastructure.py) — retrieves a pilot area's volunteered power infrastructure under ODbL 1.0.
 - [REE access-capacity fetcher](../../experiments/fetch_ree_access_capacity.py) — preserves separate transmission demand/generation CSVs with SHA-256 manifests.
 - [REE acquisition status](ree-acquisition-status.md) — verified source facts, unverified steps and validation gates.
 - [Operator coverage matrix](operator-coverage-matrix.md) — current publication coverage and known gaps across Spanish DSOs.
