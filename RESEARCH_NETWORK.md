@@ -2,6 +2,10 @@
 
 This account is a connected research environment, not a collection of unrelated products. Projects can contribute ideas, interfaces, data models, evaluation methods, or historical context to other projects. A connection in this map means a useful conceptual relationship; it does not imply that code is integrated or that a result has been demonstrated.
 
+## Ecosystem vision
+
+The broader synthesis is described in [A Possible Future Intelligence Ecosystem](ECOSYSTEM_VISION.md). It explores collective intelligence, adaptive systems, living scientific infrastructure, digital models of the physical world, human–AI interaction, civilisational memory, new forms of coordination, and the shared infrastructure these domains may require. This is a conceptual map, not a claim of integration or feasibility.
+
 ## Central question
 
 How can increasingly capable AI systems perceive, model, reason about, act in, and improve their environments while remaining understandable and steerable?
