@@ -29,6 +29,7 @@ SOURCES = {
             "&typename=DeclaracionInteresComunitario&version=2.0.0"
         ),
         "filename": "gva_declaraciones_interes_comunitario.gpkg",
+        "signature": b"SQLite format 3\\x00",
         "dataset": "Declaraciones de Interés Comunitario de la Comunitat Valenciana",
         "license": "Creative Commons Attribution (CC BY)",
         "update_note": "Catalogue says update frequency depends on source records",
