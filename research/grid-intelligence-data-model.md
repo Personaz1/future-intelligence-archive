@@ -168,3 +168,24 @@ columns after inspecting the downloaded header and accompanying methodology.
 Do not assume the REE circuit layer's `FECHA_RECARGA` is the same as the
 publication date or the retrieval timestamp. Store it as a source edit/update
 timestamp until the publisher's semantics are confirmed.
+
+
+## DSO publication fields discovered in i-DE generation data
+
+A May 2026 i-DE generation publication exposes fields beyond a single MW value:
+available capacity, occupied capacity, admitted-but-unresolved applications split
+by PV/wind/other, occupied/free positions, affected transmission node,
+short-circuit-limited flag, regulatory-commitment flag, `0*` flag, connection
+point name and connection point identifier. The November 2026 generation and
+demand publications are indexed as separate PDFs dated 4 November.
+
+Model these flags and identifiers explicitly. In particular:
+- `0*` is a methodological state that can indicate potential capacity subject
+  to reinforcements; it is not the same as ordinary zero.
+- regulatory commitment means applications are pending due to a competitive
+  allocation process at the predominantly affected transmission node; it is
+  not simply "occupied MW".
+- occupied capacity, pending admitted applications and available capacity
+  remain separate observations.
+- preserve the source UTM coordinates and defer spatial joins until the exact
+  coordinate reference system is verified.
