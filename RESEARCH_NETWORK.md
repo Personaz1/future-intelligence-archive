@@ -23,7 +23,7 @@ The original Guardian ambition is not equivalent to a modern agent runtime. The 
 ## Research strands
 
 ### 1. Agents, memory, tools, and orchestration
-- [decentralized-ai-child](https://github.com/Personaz1/decentralized-ai-child) — distributed and multi-model AI experiments.
+- [decentralized-ai-child](https://github.com/Personaz1/decentralized-ai-child) — distributed and multi-model AI experiments; see the [source-grounded dossier](research/decentralized-ai-child.md) and [preserved original research note](research/decentralized-ai-child-original-notes.md).
 - [TORI](https://github.com/Personaz1/TORI) — AGI architecture placeholder and future synthesis point.
 - [oh-my-codex](https://github.com/Personaz1/oh-my-codex) — upstream agent workflow tooling.
 - [claude-code](https://github.com/Personaz1/claude-code) — upstream coding-agent source snapshot.
