@@ -1,12 +1,12 @@
 """Offline tests for the Generalitat Valenciana land-layer fetcher."""
 import unittest
 
-from experiments.fetch_gva_land_layers import SOURCES, sha256_file, validate_file_signature
+from experiments.fetch_gva_land_layers import SOURCES, sha256_file, validate_file_signature, validate_csv_headers
 
 
 class GVALandLayerTests(unittest.TestCase):
     def test_both_sources_have_explicit_cc_by_metadata(self):
-        self.assertEqual(set(SOURCES), {"su_suz", "coscv_2025", "zoning", "dic", "patfor_tfe"})
+        self.assertEqual(set(SOURCES), {"su_suz", "su_suz_csv", "coscv_2025", "zoning", "dic", "patfor_tfe"})
         for source in SOURCES.values():
             self.assertIn("CC BY", source["license"])
 
@@ -37,6 +37,20 @@ class GVALandLayerTests(unittest.TestCase):
         source = SOURCES["coscv_2025"]
         self.assertIn("2025COSCV", source["url"])
         self.assertTrue(any("not a legal zoning" in item for item in source["limitations"]))
+
+    def test_su_suz_csv_declares_required_fields(self):
+        source = SOURCES["su_suz_csv"]
+        self.assertIn("outputformat=csv", source["url"])
+        self.assertEqual(source["expected_headers"], ["municipio", "uso", "sup", "f5electric"])
+
+    def test_csv_header_validation(self):
+        import tempfile
+        from pathlib import Path
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "valid.csv"
+            path.write_text("municipio,uso,sup,f5electric\\nElche,industrial,1000,Sí\\n", encoding="utf-8")
+            validate_csv_headers(path, ["municipio", "uso", "sup", "f5electric"])
 
     def test_download_file_signatures(self):
         self.assertEqual(SOURCES["su_suz"]["signature"], b"SQLite format 3\x00")
