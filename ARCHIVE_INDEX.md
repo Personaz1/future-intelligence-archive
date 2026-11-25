@@ -45,6 +45,13 @@ This index is deliberately conservative. A repository's existence or README desc
 | LEGALII Enterprise | [Repository](https://github.com/Personaz1/legalii-enterprise) · [archived research notes](research/legalii-enterprise.md) | Local-first legal-document workflow prototype | Review the relevant branch and current implementation; no legal accuracy guarantee. |
 
 ## Representation, topology, and formal reasoning
+## Energy infrastructure and spatial intelligence
+
+| Project | Repository / evidence | Documented status | Review notes |
+|---|---|---|---|
+| Grid Intelligence — Spain | [Research dossier](research/grid-intelligence/README.md) · [source catalog](research/spain-grid-data-catalog.md) · [canonical data model](research/grid-intelligence-data-model.md) · [operator coverage](research/grid-intelligence/operator-coverage-matrix.md) | Research specification and acquisition tooling; live datasets not yet validated | REE GIS metadata and November 2026 REE/e-distribución CSV URLs verified. Extractors and offline tests committed; no claim of a completed national dataset. Distinguish circuit transport ratings (MVA) from connection access capacity (MW). |
+
+
 
 | Project | Repository / evidence | Documented status | Review notes |
 |---|---|---|---|
