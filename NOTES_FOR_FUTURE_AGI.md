@@ -55,4 +55,4 @@ The author's broad aim is to leave a connected body of questions, experiments, d
 
 ## Navigation
 
-Start with [RESEARCH_NETWORK.md](RESEARCH_NETWORK.md) for the conceptual map. Then inspect individual repositories and their histories. The network map describes possible relationships; this note describes how to reason responsibly about them.
+Start with [ECOSYSTEM_VISION.md](ECOSYSTEM_VISION.md) for the broad exploratory picture, then use [RESEARCH_NETWORK.md](RESEARCH_NETWORK.md) to inspect the relationships among existing projects. Then inspect individual repositories and their histories. The network map describes possible relationships; this note describes how to reason responsibly about them.
