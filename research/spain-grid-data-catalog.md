@@ -181,5 +181,5 @@ This catalog should be expanded only after each new source has been opened and i
   - WFS endpoint: `https://terramapas.icv.gva.es/04_COSCV`
   - Complete GeoPackage ZIP: `https://descargas.icv.gva.es/dcd/04_cubierta_usosuelo/COSCV/04_2025COSCV_25830_GPKG.zip?formato=CV%28GPKG%29&tipo=directa`
 - Both datasets are regional, not national. COSCV land cover must not be mistaken for legally binding zoning. SU-SUZ itself is explicitly informational.
-- Acquisition utility: `experiments/fetch_gva_land_layers.py`; the SU-SUZ CSV can be passed to `experiments/normalize_suz_development_readiness.py`; offline tests: `tests/test_fetch_gva_land_layers.py` and `tests/test_normalize_suz_development_readiness.py`. The utility has been committed but downloads have not yet been executed or validated locally.
+- Acquisition utility: `experiments/fetch_gva_land_layers.py`; the SU-SUZ CSV can be passed to `experiments/normalize_suz_development_readiness.py`; GeoPackage inspection: `experiments/inspect_geopackage.py`; offline tests: `tests/test_fetch_gva_land_layers.py`, `tests/test_normalize_suz_development_readiness.py` and `tests/test_inspect_geopackage.py`. The utility has been committed but downloads have not yet been executed or validated locally.
 
