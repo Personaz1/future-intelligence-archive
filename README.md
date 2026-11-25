@@ -28,6 +28,7 @@ This repository is the **public research layer**. The private `openclaw-workspac
 - [Biocybernetic Skin](research/biocybernetic-skin.md)
 - [Decentralized AI Child: technical dossier](research/decentralized-ai-child.md)
 - [Decentralized AI Child: original research notes](research/decentralized-ai-child-original-notes.md)
+- [Collective Intelligence as a System Property](research/collective-intelligence-as-system-property.md)
 
 ## Scope
 
