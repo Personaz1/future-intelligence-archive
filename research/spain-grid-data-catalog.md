@@ -35,7 +35,13 @@ Important: these are transmission assets, not a complete model of all distributi
 
 ### REE
 - Demand access capacity: https://www.ree.es/es/clientes/consumidor/acceso-conexion/conoce-la-capacidad-de-acceso
-- Generation access capacity: https://www.ree.es/es/clientes/generador/acceso-conexion/conoce-la-capacidad-de-acceso
+- Generation access capacity: https://www.ree.es/es/clientes/titular-de-almacenamiento/acceso-conexion/conoce-la-capacidad-de-acceso
+- The pages expose monthly CSV/XLSX and occupied-by-position files. On 2026-11-25, the latest publication displayed was 2026-11-03.
+- Direct CSV snapshots:
+  - Demand: https://www.ree.es/sites/default/files/12_CLIENTES/Documentos/2026_11_03_GRT_demanda.csv
+  - Generation: https://www.ree.es/sites/default/files/12_CLIENTES/Documentos/2026_11_03_GRT_generacion.csv
+- REE's demand methodology evaluates active power simultaneously at a node or zone, using short-circuit power, static and dynamic criteria; it explicitly says national sums are not meaningful because nodes share zones of influence.
+- Generation access is technology-specific (MGES/MPE) and the granted access is not a guarantee of generation/evacuation in real-time operation.
 - Capture each publication's issue date, scenario, node identifier, voltage, technology/direction, units and methodology.
 
 ### i-DE / Iberdrola distribution
@@ -108,5 +114,6 @@ Never convert missing data to zero. Never combine demand and generation capacity
 - REE ArcGIS metadata confirms transmission substation point and circuit polyline layers; circuit records expose monthly/seasonal MVA transport ratings, limiting elements, status, country and stable identifiers.
 - i-DE methodology explicitly warns about interdependent nodes, non-additivity and the need for a specific connection study.
 - e-distribución November 2026 pages expose separate official CSV/XLSX files for demand and generation, including the direct CSV download URLs recorded above.
+- REE's access-capacity pages expose separate monthly transmission CSV/XLSX files for demand and generation. The 3 November 2026 CSV URLs are recorded above; REE explicitly warns that nodal capacities cannot be summed nationally.
 
 This catalog should be expanded only after each new source has been opened and its schema, cadence and terms inspected.
