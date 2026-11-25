@@ -41,7 +41,7 @@ The original Guardian ambition is not equivalent to a modern agent runtime. The 
 
 ### 3. Human models, cognition, and biological systems
 - [biocybernetic-skin](https://github.com/Personaz1/biocybernetic-skin) — biological interface concepts.
-- Human Atlas — separate research programme; currently frozen. Do not expand or treat as active work unless explicitly resumed.
+- Human Atlas — separate anatomy and human-body research programme. An earlier workspace snapshot marked it frozen; the maintainer subsequently resumed the programme. Treat it as active research planning, not as an implemented application. Keep empirical anatomy and physiology distinct from personal observations and speculative models.
 
 **Cross-links:** anatomy, movement, perception, and body-state representations may eventually inform interfaces for human-AI interaction and embodied intelligence. Keep empirical biology, personal observations, and speculative models clearly distinguished.
 
