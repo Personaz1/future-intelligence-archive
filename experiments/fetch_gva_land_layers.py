@@ -148,7 +148,13 @@ def build_session() -> requests.Session:
 
 def validate_csv_headers(path: Path, expected: list[str]) -> None:
     with path.open("r", encoding="utf-8-sig", newline="") as stream:
-        reader = csv.DictReader(stream)
+        sample = stream.read(65536)
+        stream.seek(0)
+        try:
+            delimiter = csv.Sniffer().sniff(sample, delimiters=",;\\t|").delimiter
+        except csv.Error:
+            delimiter = ","
+        reader = csv.DictReader(stream, delimiter=delimiter)
         actual = {name.strip() for name in (reader.fieldnames or [])}
     missing = set(expected) - actual
     if missing:
