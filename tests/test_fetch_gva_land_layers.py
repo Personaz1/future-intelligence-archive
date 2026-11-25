@@ -6,7 +6,7 @@ from experiments.fetch_gva_land_layers import SOURCES, sha256_file, validate_fil
 
 class GVALandLayerTests(unittest.TestCase):
     def test_both_sources_have_explicit_cc_by_metadata(self):
-        self.assertEqual(set(SOURCES), {"su_suz", "coscv_2025", "zoning", "dic"})
+        self.assertEqual(set(SOURCES), {"su_suz", "coscv_2025", "zoning", "dic", "patfor_tfe"})
         for source in SOURCES.values():
             self.assertIn("CC BY", source["license"])
 
@@ -15,6 +15,11 @@ class GVALandLayerTests(unittest.TestCase):
         self.assertIn("InventarioSuSuz", source["url"])
         self.assertIn("gpkg", source["url"])
         self.assertTrue(any("informative" in item for item in source["limitations"]))
+
+    def test_patfor_strategic_forest_layer_is_cc_by(self):
+        source = SOURCES["patfor_tfe"]
+        self.assertIn("Planeamiento.TFEFactores", source["url"])
+        self.assertIn("CC BY", source["license"])
 
     def test_dic_is_not_treated_as_automatic_project_permission(self):
         source = SOURCES["dic"]
@@ -36,6 +41,7 @@ class GVALandLayerTests(unittest.TestCase):
     def test_download_file_signatures(self):
         self.assertEqual(SOURCES["su_suz"]["signature"], b"SQLite format 3\x00")
         self.assertEqual(SOURCES["zoning"]["signature"], b"SQLite format 3\x00")
+        self.assertEqual(SOURCES["patfor_tfe"]["signature"], b"SQLite format 3\\x00")
         self.assertEqual(SOURCES["dic"]["signature"], b"SQLite format 3\x00")
         self.assertEqual(SOURCES["coscv_2025"]["signature"], b"PK\x03\x04")
 
