@@ -248,3 +248,32 @@ is the minimum of the applicable criteria.
 Therefore the model has explicit electrical-influence zones, node-zone
 relationships and criterion-level observations. A nearest-substation join alone
 cannot represent these electrical dependencies.
+
+
+## Land, planning and environmental evidence
+
+### SiteConstraintObservation
+- observation_id
+- site_id / geometry_ref
+- source_dataset_id
+- source_feature_id
+- constraint_type: zoning | land_cover | protected_area | flood | slope | wildfire | access | other
+- source_class_code
+- source_class_label
+- legal_force: binding | informative | modelled | volunteered | unknown
+- geometry_relation: intersects | within | distance | derived
+- measured_value (nullable)
+- measured_unit (nullable)
+- source_valid_time_start / source_valid_time_end
+- source_publication_date
+- retrieval_timestamp
+- licence_id
+- transformation_version
+- evidence_ref
+
+Do not collapse land-cover classes, zoning designations and legally binding
+planning constraints into one generic "land-use" field. For example, COSCV is
+land-cover evidence; SU-SUZ is an explicitly informative inventory; the
+binding planning instrument must be checked separately. A parcel can be
+agricultural in land-cover mapping while its legal planning classification is
+different, and the reverse can also occur.
