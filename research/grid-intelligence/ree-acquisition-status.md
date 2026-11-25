@@ -148,8 +148,8 @@ to the licensed pilot stack:
   dated 2025 in forest areas. The portal labels this edition historical data.
   Complete GeoPackage ZIP URL is recorded in the source catalog.
 
-Acquisition utility: `experiments/fetch_gva_land_layers.py` (now supports `patfor_tfe`, `dic`, `zoning`, `su_suz` and `coscv_2025`).
-Offline metadata/hash tests: `tests/test_fetch_gva_land_layers.py`.
+Acquisition utility: `experiments/fetch_gva_land_layers.py` (now supports `patfor_tfe`, `dic`, `zoning`, `su_suz`, `su_suz_csv` and `coscv_2025`).
+Offline metadata/hash tests: `tests/test_fetch_gva_land_layers.py`. The SU-SUZ CSV can be normalized with `experiments/normalize_suz_development_readiness.py`; tests are in `tests/test_normalize_suz_development_readiness.py`.
 
 **Status:** publisher pages, CC BY metadata and download endpoints verified.
 The files have not yet been downloaded or schema-validated in this environment.
