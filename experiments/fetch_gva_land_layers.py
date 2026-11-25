@@ -209,7 +209,10 @@ def main() -> None:
                         output.write(chunk)
                         digest.update(chunk)
                         byte_count += len(chunk)
-            if source.get("signature") is not None:\n                validate_file_signature(path, source["signature"])\n            if source.get("expected_headers"):\n                validate_csv_headers(path, source["expected_headers"])
+            if source.get("signature") is not None:
+                validate_file_signature(path, source["signature"])
+            if source.get("expected_headers"):
+                validate_csv_headers(path, source["expected_headers"])
             record = {
                 "source_id": source_id,
                 "dataset": source["dataset"],
