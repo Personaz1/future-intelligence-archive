@@ -33,6 +33,7 @@ BASE = (
 )
 LAYERS = {"substations": 3, "circuits": 11}
 PAGE_SIZE = 1500
+COUNTRY_FILTER = "PAIS = 'ES'"
 
 # WGS84 envelopes. Separate envelopes avoid pretending the mainland bbox
 # covers the Canary Islands. Ceuta and Melilla are inside MAINLAND_BALEARES.
@@ -66,7 +67,7 @@ def fetch_layer(
         region_received = 0
         while True:
             params = {
-                "where": "1=1",
+                "where": COUNTRY_FILTER,
                 "geometry": bbox,
                 "geometryType": "esriGeometryEnvelope",
                 "inSR": 4326,
@@ -153,6 +154,7 @@ def main() -> None:
         "service": BASE,
         "retrieved_at_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "coverage": {
+            "country_filter": COUNTRY_FILTER,
             "crs": "EPSG:4326",
             "regions": REGIONS,
             "note": (
