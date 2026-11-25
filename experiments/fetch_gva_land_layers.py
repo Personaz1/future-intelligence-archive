@@ -12,6 +12,7 @@ Requires Python 3.10+ and requests.
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import time
@@ -54,6 +55,24 @@ SOURCES = {
             "Features represent non-urban parcels with a recorded declaration of community interest.",
             "The publisher states that the layer is informative and derives from administrative case files.",
             "A DIC record is not a blanket permission for a new energy project; verify the specific declaration, conditions and municipal licence.",
+        ],
+    },
+    "su_suz_csv": {
+        "url": (
+            "https://terramapas.icv.gva.es/0702_Planeamiento"
+            "?outputformat=csv&request=GetFeature&service=WFS"
+            "&typename=InventarioSuSuz&version=2.0.0"
+        ),
+        "filename": "gva_su_suz_inventory.csv",
+        "signature": None,
+        "expected_headers": ["municipio", "uso", "sup", "f5electric"],
+        "dataset": "Inventario de suelo urbano y urbanizable (SU-SUZ), CSV attribute export",
+        "license": "Creative Commons Attribution (CC BY)",
+        "update_note": "Portal reports bianual update frequency",
+        "limitations": [
+            "Attribute-only CSV export; use the GeoPackage for spatial geometry.",
+            "The publisher states that the information is informative.",
+            "The inventory describes urban land under development and developable sectors, not all parcels.",
         ],
     },
     "su_suz": {
@@ -127,6 +146,18 @@ def build_session() -> requests.Session:
     return session
 
 
+def validate_csv_headers(path: Path, expected: list[str]) -> None:
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        reader = csv.DictReader(stream)
+        actual = {name.strip() for name in (reader.fieldnames or [])}
+    missing = set(expected) - actual
+    if missing:
+        path.unlink(missing_ok=True)
+        raise RuntimeError(
+            f"Unexpected CSV schema for {path.name}; missing columns: {sorted(missing)}"
+        )
+
+
 def validate_file_signature(path: Path, expected: bytes) -> None:
     with path.open("rb") as stream:
         actual = stream.read(len(expected))
@@ -178,7 +209,7 @@ def main() -> None:
                         output.write(chunk)
                         digest.update(chunk)
                         byte_count += len(chunk)
-            validate_file_signature(path, source["signature"])
+            if source.get("signature") is not None:\n                validate_file_signature(path, source["signature"])\n            if source.get("expected_headers"):\n                validate_csv_headers(path, source["expected_headers"])
             record = {
                 "source_id": source_id,
                 "dataset": source["dataset"],
