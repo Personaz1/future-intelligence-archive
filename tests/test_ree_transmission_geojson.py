@@ -5,9 +5,17 @@ from experiments.ree_transmission_geojson import REGIONS, feature_key
 
 
 class ExtractorTests(unittest.TestCase):
-    def test_national_regions_include_canaries_and_ceuta_melilla(self):
-        self.assertIn("canary_islands", REGIONS)
-        self.assertIn("ceuta_melilla", next(iter(REGIONS)))
+    def test_region_envelopes_cover_mainland_and_canaries(self):
+        mainland = [float(value) for value in REGIONS["mainland_balearics_ceuta_melilla"].split(",")]
+        canaries = [float(value) for value in REGIONS["canary_islands"].split(",")]
+        self.assertLessEqual(mainland[0], -9.5)
+        self.assertGreaterEqual(mainland[2], 4.5)
+        self.assertLessEqual(mainland[1], 34.5)
+        self.assertGreaterEqual(mainland[3], 44.5)
+        self.assertLessEqual(canaries[0], -18.0)
+        self.assertGreaterEqual(canaries[2], -13.0)
+        self.assertLessEqual(canaries[1], 27.5)
+        self.assertGreaterEqual(canaries[3], 29.5)
 
     def test_objectid_is_preferred_for_deduplication(self):
         feature = {"properties": {"OBJECTID": 42, "ID": 7}, "geometry": None}
