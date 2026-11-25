@@ -18,6 +18,8 @@ This is enough to begin assembling a source-grounded national data model. It is 
 - [Canonical data model](../grid-intelligence-data-model.md) — nodes, circuits, capacity observations, evidence and semantic distinctions.
 - [Spain pilot research brief](../grid-intelligence-spain-pilot-2026-11-25.md) — commercial thesis, Alicante pilot and go/no-go criteria.
 - [REE transmission GeoJSON extractor](../../experiments/ree_transmission_geojson.py) — paginated extractor covering mainland/Balearics/Ceuta/Melilla and the Canary Islands.
+- [REE circuit-rating analyzer](../../experiments/analyze_ree_circuit_ratings.py) — monthly MVA distributions and limiting-element counts; deliberately does not sum ratings.
+- [e-distribución capacity fetcher](../../experiments/fetch_edistribucion_capacity.py) — preserves monthly demand/generation CSV snapshots with SHA-256 manifests.
 - [REE acquisition status](ree-acquisition-status.md) — verified source facts, unverified steps and validation gates.
 
 ## Build sequence
@@ -25,11 +27,13 @@ This is enough to begin assembling a source-grounded national data model. It is 
 ### Phase 1 — establish the base map
 - Extract REE transmission substations and circuits.
 - Validate geometry, coordinate reference system, voltage and identifiers.
+- Profile the monthly circuit transport ratings (MVA) and limiting elements without treating them as connection capacity.
 - Create reproducible raw-data snapshots and manifests.
 
 ### Phase 2 — attach access capacity
-- Ingest REE transmission capacity tables for demand and generation/storage.
-- Ingest CNMC monthly maps and operator datasets.
+- Preserve and normalize separate demand and generation access-capacity publications.
+- Start with e-distribución's official monthly CSVs, then add EASA and Ceuta and other DSO operators.
+- Ingest CNMC monthly maps and REE/operator datasets.
 - Keep each publication as a dated observation; never overwrite history.
 - Reconcile source node IDs to physical GIS nodes only where evidence supports the match.
 
@@ -54,4 +58,4 @@ This is enough to begin assembling a source-grounded national data model. It is 
 
 ## Immediate next task
 
-Run the REE GIS extractor from a network-enabled environment, compare results with ArcGIS count queries, inspect its output and create the first validated inventory of Spanish transmission substations and circuits. Then obtain and normalize the current CNMC/DSO capacity files. The first useful deliverable is a dated, queryable dataset with provenance — not a polished frontend.
+Run the REE GIS extractor from a network-enabled environment, compare results with ArcGIS count queries, inspect its output and create the first validated inventory of Spanish transmission substations and circuits. In parallel, acquire the official November 2026 e-distribución demand and generation CSVs, inspect their real headers, and define operator-specific normalization only after schema inspection. The first useful deliverable is a dated, queryable dataset with provenance — not a polished frontend.
