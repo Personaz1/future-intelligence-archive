@@ -36,7 +36,7 @@ class GVALandLayerTests(unittest.TestCase):
     def test_download_file_signatures(self):
         self.assertEqual(SOURCES["su_suz"]["signature"], b"SQLite format 3\x00")
         self.assertEqual(SOURCES["zoning"]["signature"], b"SQLite format 3\x00")
-        self.assertEqual(SOURCES["dic"]["signature"], b"SQLite format 3\\x00")
+        self.assertEqual(SOURCES["dic"]["signature"], b"SQLite format 3\x00")
         self.assertEqual(SOURCES["coscv_2025"]["signature"], b"PK\x03\x04")
 
     def test_invalid_signature_deletes_bad_download(self):
