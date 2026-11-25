@@ -122,8 +122,8 @@ Every screened site should include:
 
 ## First validation experiment
 
-Use a small, manually reviewable sample in the i-DE/e-distribución overlap
-corridor in Alicante province:
+Use a small, manually reviewable sample in the i-DE service area in Alicante
+province:
 - choose several real industrial/solar/storage candidate parcels;
 - compare the automated operator/node mapping with published operator maps;
 - manually verify affected transmission nodes and voltage;
