@@ -12,6 +12,7 @@ national dataset has been downloaded, validated, or licensed for redistribution.
 |---|---|---|---|
 | REE ArcGIS MapServer | Official public service exposes transmission substations (layer 3) and circuits (layer 11); service supports JSON/GeoJSON queries | Service and layer metadata inspected | Full national extraction, record counts, completeness, refresh cadence |
 | REE circuits, layer 11 | Polyline geometry; IDs/MRiD/EIC, voltage, owners/operators, country, status, endpoint positions, monthly/seasonal transport ratings (MVA), limiting-element fields | Metadata inspected | Meaning and data quality of every field; whether all records are in-service or planned |
+| REE transmission access capacity | Separate monthly demand and generation CSV/XLSX; November 2026 publication dated 3 Nov; demand includes scenario/node/zone criteria and occupied/access margin information | Official pages and direct CSV URLs verified | CSV files not downloaded; headers, row counts, exact normalization and reuse terms unverified |
 | REE transport-network overview | REE describes a network with over 46,000 km of circuits, 700+ substations and 6,000+ positions | Publisher overview inspected | Exact alignment with the ArcGIS layer's scope and record counts |
 | CNMC access-capacity maps | Monthly operator submissions; published capacity is indicative and node values must not be summed as if independent | Official publication and caveats reviewed | Raw source files, historical snapshots, schema stability and reuse terms |
 | i-DE / e-distribución | Operator-facing public generation and demand capacity information exists, including downloadable data on e-distribución pages | Official pages reviewed | Downloaded source files, column mapping, complete version history and redistribution rights |
@@ -51,6 +52,7 @@ specific solar, battery, industrial or data-centre project can connect.
 
 ## New capacity and rating workflows
 
+- `experiments/fetch_ree_access_capacity.py` preserves the official November 2026 REE transmission demand and generation CSVs separately, with SHA-256 manifests.
 - `experiments/fetch_edistribucion_capacity.py` preserves the official November
   2026 e-distribución demand and generation CSVs separately, computes SHA-256
   checksums and inspects the CSV header/delimiter without rewriting source bytes.
@@ -74,3 +76,18 @@ indicative, are refreshed monthly, may be committed by applications received
 before publication, and can be affected by constraints in other networks.
 Demand and generation remain separate data products. Storage access rules
 must be represented with their applicable regulatory effective dates.
+
+## REE November 2026 access-capacity sources
+
+Demand CSV:
+https://www.ree.es/sites/default/files/12_CLIENTES/Documentos/2026_11_03_GRT_demanda.csv
+
+Generation CSV:
+https://www.ree.es/sites/default/files/12_CLIENTES/Documentos/2026_11_03_GRT_generacion.csv
+
+The REE demand page describes capacity as active power assessed simultaneously
+at a node or zone, with short-circuit, static and dynamic criteria. It explicitly
+warns that nodal values cannot be summed nationally because zones of influence
+interrelate the results. The generation page distinguishes MGES/MPE technology
+types and warns that access rights do not guarantee real-time generation or
+evacuation. Both pages say individual studies prevail.
