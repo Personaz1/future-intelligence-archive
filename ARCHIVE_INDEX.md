@@ -64,9 +64,9 @@ These repositories are preserved as historical research context. Their presence 
 | Shadowbroker-archived | [Repository](https://github.com/Personaz1/Shadowbroker-archived) | Archived OSINT dashboard fork; preserve upstream attribution. |
 | UltimateCarder | [Repository](https://github.com/Personaz1/UltimateCarder) | Legacy archive; not a current product. |
 
-## Separate / frozen research
+## Separate research programme
 
-- **Human Atlas** — a separate research programme. Its dossier is frozen; do not treat it as active development unless the maintainer explicitly resumes it. The detailed working dossier remains in the private workspace and is intentionally not linked from this public archive.
+- **Human Atlas** — a separate anatomy and human-body research programme. An earlier workspace snapshot marked it frozen; the maintainer subsequently resumed planning. As of this index, treat it as active research planning, not as an implemented application. The detailed working dossier remains in the private workspace and is intentionally not linked from this public archive.
 
 ## Review priorities
 
