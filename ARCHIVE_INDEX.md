@@ -19,7 +19,7 @@ This index is deliberately conservative. A repository's existence or README desc
 | Project | Repository / evidence | Documented status | Review notes |
 |---|---|---|---|
 | Guardian | [HOUSEGUARD/GUARDIAN](https://github.com/Personaz1/HOUSEGUARD/tree/main/GUARDIAN) · [history and source map](https://github.com/Personaz1/HOUSEGUARD/blob/main/GUARDIAN/HISTORY_AND_SOURCE_MAP.md) · [research notes](https://github.com/Personaz1/HOUSEGUARD/blob/main/GUARDIAN/AGI_RESEARCH_NOTES.md) | Historical agent prototype and architecture record | Nested in HOUSEGUARD, not a separate repository. Inspect immutable historical commits and distinguish implemented orchestration from planned capabilities. |
-| decentralized-ai-child | [Repository](https://github.com/Personaz1/decentralized-ai-child) | Experimental multi-model / distributed architecture; currently private | Not publicly inspectable while private. Do not infer self-evolution, consensus, self-replication, or autonomous improvement from feature labels. |
+| decentralized-ai-child | Private repository (not publicly inspectable) | Experimental multi-model / distributed architecture; currently private | Not publicly inspectable while private. Do not infer self-evolution, consensus, self-replication, or autonomous improvement from feature labels. |
 | TORI | [Repository](https://github.com/Personaz1/TORI) · [research notes](https://github.com/Personaz1/TORI/blob/main/AGI_RESEARCH_NOTES.md) | Placeholder / future synthesis point | No unified AGI implementation is claimed. |
 | oh-my-codex | [Repository](https://github.com/Personaz1/oh-my-codex) | Fork / upstream tooling | Attribute upstream work to Yeachan-Heo; distinguish local modifications from inherited code. |
 | claude-code | [Repository](https://github.com/Personaz1/claude-code) | Fork / source snapshot | Upstream identified as ultraworkers/claw-code in workspace notes; verify current provenance and redistribution rights before promoting. |
@@ -66,7 +66,7 @@ These repositories are preserved as historical research context. Their presence 
 
 ## Separate / frozen research
 
-- **Human Atlas** — a separate research programme. Its dossier is frozen; do not treat it as active development unless the maintainer explicitly resumes it. See [workspace research map](https://github.com/Personaz1/openclaw-workspace/blob/main/RESEARCH_NETWORK.md) (private; not accessible to public readers).
+- **Human Atlas** — a separate research programme. Its dossier is frozen; do not treat it as active development unless the maintainer explicitly resumes it. The detailed working dossier remains in the private workspace and is intentionally not linked from this public archive.
 
 ## Review priorities
 
