@@ -45,6 +45,7 @@ only sites that appear promising.
 | ICV DIC | Recorded community-interest declarations for non-urban parcels | That a new project has permission; inspect the declaration and municipal licence |
 | ICV COSCV 2025 | Current-ish land-cover evidence, based on 2025 source inputs | Legal zoning or permitted use |
 | Protected areas | Environmental screening | Full permit feasibility |
+| ICV PATFOR strategic forest land | Regional strategic-forest boundary and designation-factor review | Parcel-specific permit outcome or current legal status without authority verification |
 | Flood risk | Exposure / engineering-review flag | Detailed parcel-scale hydraulic safety |
 | Terrain / slope | Civil works and constructability context | Geotechnical suitability |
 | OSM power assets | Candidate infrastructure geometry | Authoritative network topology, connection route or capacity |
