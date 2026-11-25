@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Download two CC BY land/planning layers from Institut Cartogràfic Valencià.
+"""Download CC BY planning and land layers from Institut Cartogràfic Valencià.
 
-Sources:
-- SU-SUZ urban/developable land inventory (GeoPackage via WFS)
-- COSCV 2025 land-cover cartography (complete GeoPackage ZIP)
+Default sources: PATFOR strategic forest land, DIC records, planning zoning,
+SU-SUZ GeoPackage and SU-SUZ CSV. COSCV 2025 full-region land-cover ZIP is
+available as an explicit optional source because it may be comparatively large.
 
-These are Valencian regional datasets, not nationwide Spain coverage.
-SU-SUZ is explicitly informational; authoritative planning instruments prevail.
-Requires Python 3.10+ and requests.
+These are Valencian regional datasets, not nationwide Spain coverage. Several
+planning layers are explicitly informational; authoritative planning
+instruments prevail. Requires Python 3.10+ and requests.
 """
 from __future__ import annotations
 
@@ -183,7 +183,7 @@ def main() -> None:
         "--sources",
         nargs="+",
         choices=tuple(SOURCES),
-        default=list(SOURCES),
+        default=["patfor_tfe", "dic", "zoning", "su_suz", "su_suz_csv"],
         help="Select one or more source IDs",
     )
     args = parser.parse_args()
