@@ -87,6 +87,16 @@ Do not assume common schemas, geographic coverage or commercial reuse rights.
 
 ## 3. System operation and market data
 
+### CNMC Data portal — commercially reusable context datasets
+- Portal: https://data.cnmc.es/
+- Reuse terms: CC BY-SA 4.0 for datasets actually published in CNMC Data. Commercial and non-commercial reuse is allowed with attribution, preservation of update dates/metadata, no distortion, and share-alike compliance.
+- Electricity generation monthly statistics: https://data.cnmc.es/energia/energia-electrica/renovables-cogeneracion-y-residuos/evolucion-mensual-de-energia-electrica — technology, energy sold (GWh), installed capacity (MW), number of installations.
+- Electricity generation annual statistics: https://data.cnmc.es/energia/energia-electrica/renovables-cogeneracion-y-residuos/evolucion-anual-de-energia-electrica — annual regional/technology context.
+- Retail electricity market: https://data.cnmc.es/energia/energia-electrica/energia-y-suministros — quarterly operator/CCAA, customer counts and energy consumption.
+- These are useful for regional market/system context, but they do not replace node-level grid topology or access-capacity data.
+- Do not extend the portal's CC BY-SA licence to capacity maps published elsewhere on cnmc.es or to source data owned by distribution operators.
+
+
 ### REE REData API
 - Documentation: https://www.ree.es/es/datos/apidatos
 - REST GET interface: `/{lang}/datos/{category}/{widget}`
