@@ -29,7 +29,7 @@ SOURCES = {
             "&typename=InventarioSuSuz&version=2.0.0"
         ),
         "filename": "gva_su_suz_inventory.gpkg",
-        "signature": b"SQLite format 3\\x00",
+        "signature": b"SQLite format 3\x00",
         "dataset": "Inventario de suelo urbano y urbanizable (SU-SUZ)",
         "license": "Creative Commons Attribution (CC BY)",
         "update_note": "Portal reports bianual update frequency",
@@ -46,7 +46,7 @@ SOURCES = {
             "&typename=Planeamiento.Zonificacion&version=2.0.0"
         ),
         "filename": "gva_planning_zoning.gpkg",
-        "signature": b"SQLite format 3\\x00",
+        "signature": b"SQLite format 3\x00",
         "dataset": "Planeamiento Urbanístico de la Comunitat Valenciana: Zonificación urbanística",
         "license": "Creative Commons Attribution (CC BY)",
         "update_note": "Portal reports bianual update frequency",
@@ -63,7 +63,7 @@ SOURCES = {
             "?formato=CV%28GPKG%29&tipo=directa"
         ),
         "filename": "gva_coscv_2025_25830_gpkg.zip",
-        "signature": b"PK\\x03\\x04",
+        "signature": b"PK\x03\x04",
         "dataset": "Cartografía de Ocupación del Suelo de la Comunitat Valenciana (COSCV), edition 2025",
         "license": "Creative Commons Attribution (CC BY)",
         "update_note": "2025 historical edition; catalogue marks frequency as historical data",
