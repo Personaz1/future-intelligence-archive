@@ -277,3 +277,50 @@ land-cover evidence; SU-SUZ is an explicitly informative inventory; the
 binding planning instrument must be checked separately. A parcel can be
 agricultural in land-cover mapping while its legal planning classification is
 different, and the reverse can also occur.
+
+
+### DevelopmentSectorObservation
+
+Use this entity for ICV SU-SUZ planning-sector records. Preserve source field
+names alongside normalized values; do not flatten development stages into one
+boolean.
+
+- sector_id; source_feature_id
+- municipality; municipality_ine_code
+- partial_plan_name; execution_unit
+- global_land_use: industrial | residential | tertiary | facilities | other
+- planning_area_m2; permitted_buildable_floor_area_m2
+- partial_plan_approval_date; partial_plan_publication_date
+- approving_authority: municipality | Generalitat | other
+- planning_legal_framework; partial_plan_approved
+- development_management: direct | indirect | owners | other
+- PAI_awarded; reparcelation_status; reparcelation_registry_date
+- urbanisation_project_exists; urbanisation_works_start_date
+- urbanisation_works_acceptance_date
+- road_access; sidewalks; public_lighting; potable_water
+- electrical_installation; sewerage; stormwater_collection; collector_connection
+- source_publication_date; source_record_ref; licence_id; retrieved_at
+- legal_force: informative
+
+**Interpretation:** the ICV SU-SUZ attribute dictionary defines global land-use
+classes (industrial, residential, tertiary, facilities), sector area, buildable
+floor area, plan approval/publication dates, PAI award, reparcelation,
+urbanisation works and basic services. It labels the inventory informative.
+The presence of an electrical installation is a site-service attribute, not a
+measure of spare MW, voltage, connection rights or grid hosting capacity.
+
+### DevelopmentReadinessAssessment
+
+A derived, versioned assessment should expose separate dimensions rather than
+one opaque score:
+- planning_maturity
+- land_management_maturity
+- parcel_reconfiguration_maturity
+- urbanisation_maturity
+- road_access_readiness
+- utility_service_readiness
+- evidence_completeness
+- legal_verification_required
+
+Never assume that one completed dimension implies another. An approved partial
+plan does not prove that reparcelation or urbanisation works are complete.
