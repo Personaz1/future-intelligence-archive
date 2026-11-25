@@ -112,7 +112,18 @@ Do not assume common schemas, geographic coverage or commercial reuse rights.
 - https://www.entsoe.eu/data/
 - Cross-border and European system data. API registration/token and dataset-specific terms may apply.
 
-## 4. Geographic and planning context (to be researched)
+## 4. Geographic and planning context
+
+### Commercially reusable geospatial and environmental sources
+- IGN / CNIG Download Centre: https://centrodedescargas.cnig.es/CentroDescargas/index.jsp — official geographic base, orthophotos, elevation and LiDAR; licence compatible with CC BY 4.0 under Order FOM/2807/2015. Follow the exact attribution formula for each product.
+- Cadastre INSPIRE parcel WFS: https://ovc.catastro.meh.es/INSPIRE/wfsCP.aspx?service=wfs&version=2.0.0&request=getcapabilities — catalogued with CC BY 4.0. Use for parcel geometry and spatial identity, not as proof of ownership or title.
+- MITECO Natura 2000: https://datos.gob.es/es/catalogo/e05068001-espacios-protegidos-de-la-red-natura-2000 — national protected-area geometry under CC BY; catalogue distribution date 2025-01-30.
+- Generalitat Valenciana protected-area management zones: https://datos.gob.es/es/catalogo/a10002983-norma-de-gestion-de-los-espacios-protegidos-de-la-red-natura-2000 — CC BY; useful for Alicante/Valencian pilot, latest catalogue update 2026-08-25.
+- Official flood-risk WMS: https://datos.gob.es/es/catalogo/e0dat0002-servicio-wms-web-map-service-areas-de-riesgo-potencial-significativo-de-inundacion-arpsi — CC BY 4.0 in the catalogue; prefer source vector data where available.
+- OpenStreetMap power infrastructure: https://www.openstreetmap.org/copyright — ODbL 1.0; useful for candidate substations, transformers and power lines, but not an authoritative or complete network record. Keep the ODbL-derived database separate and follow share-alike requirements.
+- JRC Open Power Plants Database: https://data.jrc.ec.europa.eu/dataset/9810feeb-f062-49cd-8e76-8d8cfd488a05 — CC BY 4.0; 2019 snapshot, explicitly incomplete.
+- JRC-IDEES-2023: https://joint-research-centre.ec.europa.eu/what-we-do/scientific-tools-and-databases/potencia-policy-oriented-tool-energy-and-climate-change-impact-assessment/jrc-idees_en — CC BY 4.0; sectoral energy-system context through 2023, not site-specific demand.
+
 - Cadastre / parcel boundaries and land-use constraints.
 - Protected areas, environmental constraints and planning zoning.
 - Flood and wildfire risk.
