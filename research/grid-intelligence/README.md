@@ -21,7 +21,7 @@ This is enough to begin assembling a source-grounded national data model. It is 
 - [REE circuit-rating analyzer](../../experiments/analyze_ree_circuit_ratings.py) — monthly MVA distributions and limiting-element counts; deliberately does not sum ratings.
 - [e-distribución capacity fetcher](../../experiments/fetch_edistribucion_capacity.py) — preserves monthly demand/generation CSV snapshots with SHA-256 manifests.
 - [OSM power infrastructure fetcher](../../experiments/fetch_osm_power_infrastructure.py) — retrieves a pilot area's volunteered power infrastructure under ODbL 1.0.
-- [ICV land-layer fetcher](../../experiments/fetch_gva_land_layers.py) — downloads CC BY planning zoning, urban/developable land inventory and 2025 land-cover data for the Valencian Community.
+- [ICV land-layer fetcher](../../experiments/fetch_gva_land_layers.py) — downloads CC BY DIC records, planning zoning, urban/developable land inventory and 2025 land-cover data for the Valencian Community.
 - [Alicante pilot protocol](alicante-pilot-protocol.md) — stratified sample, spatial QA, source semantics and go/no-go criteria.
 - [REE access-capacity fetcher](../../experiments/fetch_ree_access_capacity.py) — preserves separate transmission demand/generation CSVs with SHA-256 manifests.
 - [REE acquisition status](ree-acquisition-status.md) — verified source facts, unverified steps and validation gates.
