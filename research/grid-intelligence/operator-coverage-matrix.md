@@ -42,3 +42,20 @@ a published capacity map does not replace an engineering connection study.
 - Reconcile connection-point IDs, substation codes and affected transmission
   node IDs only when a deterministic mapping is available.
 - Review reuse/licensing terms before redistribution or commercial packaging.
+
+
+## Reuse clearance overlay
+
+- e-distribución: restricted without rights-holder authorization for commercial
+  reuse under its published legal notice.
+- i-DE: restricted without authorization for commercial reproduction,
+  transformation, distribution or public communication.
+- REE ESIOS/API: commercial use prohibited by ESIOS terms. REE GIS and access
+  capacity files remain separately un-cleared until their specific terms are
+  confirmed.
+- UFD and Viesgo: rights not yet reviewed.
+- CNMC Data portal: CC BY-SA 4.0 permits commercial reuse for datasets actually
+  published in that portal; it does not automatically cover the CNMC capacity
+  maps or operator-origin files.
+
+See [data rights and commercial boundaries](data-rights-and-commercial-boundaries.md).
