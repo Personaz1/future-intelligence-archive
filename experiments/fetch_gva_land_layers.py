@@ -22,6 +22,22 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 SOURCES = {
+    "patfor_tfe": {
+        "url": (
+            "https://terramapas.icv.gva.es/0506_PATFOR"
+            "?outputformat=gpkg&request=GetFeature&service=WFS"
+            "&typename=Planeamiento.TFEFactores&version=2.0.0"
+        ),
+        "filename": "gva_patfor_terreno_forestal_estrategico.gpkg",
+        "dataset": "PATFOR: Terreno Forestal Estratégico por provincias",
+        "license": "Creative Commons Attribution (CC BY)",
+        "update_note": "Catalogue does not provide a confirmed update frequency",
+        "limitations": [
+            "The layer delineates strategic forest land under PATFOR criteria and records the factor and province.",
+            "Do not infer a parcel-specific permit outcome from this regional strategic-forest layer alone.",
+            "Coverage is regional: Comunitat Valenciana.",
+        ],
+    },
     "dic": {
         "url": (
             "https://terramapas.icv.gva.es/0702_Planeamiento"
