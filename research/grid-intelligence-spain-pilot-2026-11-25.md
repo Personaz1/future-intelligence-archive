@@ -118,3 +118,30 @@ Capacity is directional and technology-/scenario-dependent. Demand, generation a
 3. Which exact buyer has the most expensive early-stage site-selection mistake?
 4. Can we quantify the accuracy and usefulness of a preliminary screen against real engineering studies?
 5. Is the defensible asset a dataset, a scoring model, a workflow, or a combination?
+
+
+## Additional verified GIS sources (checked 2026-11-25)
+
+REE exposes public ArcGIS REST feature layers for transmission assets:
+- Transmission substations: layer 3, point geometry.
+- Transmission circuits: layer 11, polyline geometry.
+- Service directory: https://georedservices.ree.es/arcgis_ags1/rest/services/WEBREE/Instalaciones_RdT_WEBREE/MapServer/layers
+- Circuit attributes include voltage classes (30, 66, 110, 132, 150, 220, 400 kV); supported query formats include JSON and GeoJSON.
+- These are transmission assets, not a complete distribution network.
+
+A second REE detail service exposes substation layer 1 and circuit layer 36:
+https://georedservices.ree.es/arcgis_ags2/rest/services/Zonas_de_detalle_WEBREE_MIL1/MapServer/layers
+
+e-distribución publishes monthly downloadable capacity files:
+- Generation: https://www.edistribucion.com/es/red-electrica/nodos-capacidad-red/capacidad-generacion.html
+- Demand: https://www.edistribucion.com/es/red-electrica/nodos-capacidad-red/capacidad-demanda.html
+Its November 2026 generation page advertises CSV/XLSX files and warns that capacities are not cumulative/simultaneous; one connection can affect nearby nodes.
+
+## Repository implementation started
+
+- `research/spain-grid-data-catalog.md`: verified official source inventory and ingestion caveats.
+- `research/grid-intelligence-data-model.md`: canonical schema with provenance and capacity semantics.
+- `research/grid-intelligence/README.md`: workstream index and build sequence.
+- `experiments/ree_transmission_geojson.py`: first extractor for REE transmission substations/circuits. Current bounding box covers mainland Spain and Balearic area; it excludes the Canary Islands. It has not yet been executed or validated against a live download.
+
+This is a first implementation scaffold, not yet a populated national dataset.
