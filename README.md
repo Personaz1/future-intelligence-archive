@@ -11,6 +11,15 @@ This repository is the **public research layer**. The private `openclaw-workspac
 3. [Archive Index](ARCHIVE_INDEX.md) — project inventory, evidence links, status, and review priorities.
 4. [Preservation Policy](PRESERVATION_POLICY.md) — how this archive handles history, uncertainty, and future contributions.
 
+## Research dossiers
+
+- [Guardian: research notes](research/guardian.md)
+- [Guardian: historical source map](research/guardian-history-and-source-map.md)
+- [SMARTHOUSE](research/smarthouse.md)
+- [Quantum-Topological-Intelligence](research/quantum-topological-intelligence.md)
+- [TORUS](research/torus.md)
+- [TORI](research/tori.md)
+
 ## Scope
 
 The archive preserves:
