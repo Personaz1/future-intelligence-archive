@@ -49,7 +49,7 @@ class GVALandLayerTests(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "valid.csv"
-            path.write_text("municipio,uso,sup,f5electric\\nElche,industrial,1000,Sí\\n", encoding="utf-8")
+            path.write_text("municipio,uso,sup,f5electric\nElche,industrial,1000,Sí\n", encoding="utf-8")
             validate_csv_headers(path, ["municipio", "uso", "sup", "f5electric"])
 
     def test_download_file_signatures(self):
