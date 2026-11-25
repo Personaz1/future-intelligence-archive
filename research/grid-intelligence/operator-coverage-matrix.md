@@ -64,9 +64,10 @@ See [data rights and commercial boundaries](data-rights-and-commercial-boundarie
 ## Valencian land/planning inputs for the pilot
 
 These are not grid-operator datasets; they provide the land-readiness side of
-the site-screening product. All four are catalogued with CC BY attribution:
+the site-screening product. All five are catalogued with CC BY attribution:
 
 | ICV layer | Source status | Fields / role | Important limit |
+| PATFOR strategic forest land | Publisher page and GeoPackage WFS request verified | Strategic forest polygons, factor and province | No confirmed update frequency; not a parcel-specific permit decision |
 |---|---|---|---|
 | Planeamiento.Zonificacion | Publisher page and GeoPackage WFS request verified | Planning classification and zoning | Informative layer; binding instrument must be checked |
 | SU-SUZ | Publisher page, feature type and GeoPackage WFS request verified | Industrial/residential/tertiary/facilities use, area, buildable floor area, plan approval, PAI, reparcelation, urbanisation and basic services | Informative inventory; not proof that a parcel is immediately buildable |
