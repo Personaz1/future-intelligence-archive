@@ -128,3 +128,27 @@ The utility has not yet been run against Overpass. OSM is volunteered mapping:
 it can provide candidate infrastructure geometry, but cannot establish
 authoritative asset status, electrical connectivity or available capacity.
 Any distributed derivative database must comply with ODbL share-alike terms.
+
+
+## Valencian planning and land-cover acquisition
+
+Two regional datasets have now been verified at their publisher pages and added
+to the licensed pilot stack:
+
+- ICV **SU-SUZ**: CC BY; urban land under execution units and developable
+  sectors, with planning/execution status. Publisher catalogue says bianual
+  update frequency and explicitly labels the information informative. WFS
+  feature type `InventarioSuSuz`; GeoPackage WFS request URL is recorded in
+  `research/spain-grid-data-catalog.md`.
+- ICV **COSCV 2025**: CC BY; regional land-cover mapping based on ICV 1:5,000
+  topographic cartography, SIGPAC2025 in agricultural areas and PATFOR data
+  dated 2025 in forest areas. The portal labels this edition historical data.
+  Complete GeoPackage ZIP URL is recorded in the source catalog.
+
+Acquisition utility: `experiments/fetch_gva_land_layers.py`.
+Offline metadata/hash tests: `tests/test_fetch_gva_land_layers.py`.
+
+**Status:** publisher pages, CC BY metadata and download endpoints verified.
+The files have not yet been downloaded or schema-validated in this environment.
+SU-SUZ is not a legally binding planning determination; COSCV land cover is
+not zoning. Both are regional Valencian layers, not national Spain coverage.
