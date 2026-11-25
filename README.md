@@ -30,6 +30,7 @@ This repository is the **public research layer**. The private `openclaw-workspac
 - [Decentralized AI Child: original research notes](research/decentralized-ai-child-original-notes.md)
 - [Collective Intelligence as a System Property](research/collective-intelligence-as-system-property.md)
 - [Project 01: Independent Evidence and Collective Intelligence](research/project-01-independent-evidence-and-collective-intelligence.md)
+- [Grid Intelligence — Spain](research/grid-intelligence/README.md) — Spanish electricity-grid topology, access-capacity datasets, operator coverage and site-screening research.
 
 ## Scope
 
