@@ -1,7 +1,12 @@
-"""Verified 11-vertex weighted Property-B counterexample; Python 3.10+."""
+"""Audit of a withdrawn 11-vertex hypergraph candidate.
+
+The candidate was initially reported with weight 87/64 and claimed to
+have no Property B. Independent exhaustive enumeration disproved that
+claim: it has 552 proper 2-colorings. It is NOT a counterexample.
+"""
 from collections import Counter
 from fractions import Fraction
-from itertools import combinations, product
+from itertools import product
 
 N = 11
 EDGES = [
@@ -22,31 +27,29 @@ EDGES = [
 (1,2,5,6,8,9),(1,2,5,7,8,9),(1,3,5,7,8,9),
 (2,3,4,5,8,9),(2,3,5,6,8,9),(2,3,5,7,8,9)
 ]
-THREE_COLORING = (0,0,0,0,0,0,0,1,0,1,1)
 
-def proper(edge, coloring):
+def is_proper(edge, coloring):
     return len({coloring[v] for v in edge}) > 1
 
-def verify():
-    assert len(EDGES) == len(set(EDGES)) == 51
-    assert all(tuple(sorted(e)) == e and 4 <= len(e) <= 6 for e in EDGES)
-    proper_two = sum(
-        all(proper(e, c) for e in EDGES)
-        for c in product(range(2), repeat=N)
-    )
-    assert proper_two == 0
-    assert all(proper(e, THREE_COLORING) for e in EDGES)
+def audit():
+    proper = [
+        coloring
+        for coloring in product(range(2), repeat=N)
+        if all(is_proper(edge, coloring) for edge in EDGES)
+    ]
     counts = dict(sorted(Counter(map(len, EDGES)).items()))
-    weight = sum((Fraction(1, 2**len(e)) for e in EDGES), Fraction(0))
-    assert counts == {4: 7, 5: 15, 6: 29}
-    assert weight == Fraction(87, 64) < Fraction(11, 8)
+    weight = sum(
+        (Fraction(1, 2 ** len(edge)) for edge in EDGES), Fraction(0)
+    )
     return {
-        "vertices": N, "edges": len(EDGES), "edge_size_counts": counts,
-        "proper_two_colorings": proper_two,
-        "proper_three_coloring": THREE_COLORING,
+        "vertices": N,
+        "edges": len(EDGES),
+        "edge_size_counts": counts,
         "weight": str(weight),
-        "improvement_over_Chan": str(Fraction(11, 8) - weight),
+        "proper_two_colorings": len(proper),
+        "property_B": bool(proper),
+        "status": "WITHDRAWN: not a non-2-colorable hypergraph",
     }
 
 if __name__ == "__main__":
-    print(verify())
+    print(audit())
