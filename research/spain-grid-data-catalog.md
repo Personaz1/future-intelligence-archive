@@ -46,6 +46,10 @@ Important: these are transmission assets, not a complete model of all distributi
 
 ### i-DE / Iberdrola distribution
 - Demand map and methodology: https://www.i-de.es/conexion-red-electrica/suministro-electrico/mapa-capacidad-consumo
+- Generation map: https://www.i-de.es/conexion-red-electrica/produccion-energia/mapa-capacidad-acceso
+- The current November 2026 publication was indexed as PDFs dated 2026-11-04 for both demand and generation (generation file 4.6 MB; demand file 3.7 MB). The public map page also advertises downloadable data formats.
+- The May 2026 generation PDF exposes a useful schema: distributor code, province, municipality, UTM X/Y, substation, voltage, available MW, regulatory commitment flag, occupied MW, pending admitted capacity by PV/wind/other, occupied/free positions, affected transmission node, short-circuit-limited flag, 0* flag, comments, connection-point name and connection-point ID. Treat this as a schema discovery, not proof that every month's schema is unchanged.
+- The connection-point identifier and affected transmission node are valuable candidate join keys, but require reconciliation against REE/DSO GIS IDs. Coordinate CRS must be confirmed before spatial joins.
 - The published capacity is indicative; individual applications receive specific study.
 - i-DE says node capacities are interdependent and cannot be summed across nodes or voltage levels at a substation.
 - Its demand methodology accounts for facilities scheduled for commissioning in the current year and included in the approved investment plan, but excludes future reinforcements.
@@ -112,7 +116,7 @@ Never convert missing data to zero. Never combine demand and generation capacity
 
 - CNMC announcement dated 2026-04-15 confirms national generation/demand maps and monthly updates.
 - REE ArcGIS metadata confirms transmission substation point and circuit polyline layers; circuit records expose monthly/seasonal MVA transport ratings, limiting elements, status, country and stable identifiers.
-- i-DE methodology explicitly warns about interdependent nodes, non-additivity and the need for a specific connection study.
+- i-DE methodology explicitly warns about interdependent nodes, non-additivity and the need for a specific connection study. Its generation publication exposes connection-point identifiers, affected transmission nodes, occupied/free positions, regulatory-commitment and 0* flags.
 - e-distribución November 2026 pages expose separate official CSV/XLSX files for demand and generation, including the direct CSV download URLs recorded above.
 - REE's access-capacity pages expose separate monthly transmission CSV/XLSX files for demand and generation. The 3 November 2026 CSV URLs are recorded above; REE explicitly warns that nodal capacities cannot be summed nationally.
 
