@@ -134,9 +134,18 @@ def normalize_row(row: dict[str, Any]) -> dict[str, Any]:
     return result
 
 
+def detect_delimiter(sample: str) -> str:
+    try:
+        return csv.Sniffer().sniff(sample, delimiters=",;\\t|").delimiter
+    except csv.Error:
+        return ","
+
+
 def normalize_csv(input_path: Path, output_path: Path) -> int:
     with input_path.open("r", encoding="utf-8-sig", newline="") as source:
-        reader = csv.DictReader(source)
+        sample = source.read(65536)
+        source.seek(0)
+        reader = csv.DictReader(source, delimiter=detect_delimiter(sample))
         if not reader.fieldnames:
             raise ValueError("CSV has no header row")
         required = {"municipio", "uso", "sup", "f5electric"}
