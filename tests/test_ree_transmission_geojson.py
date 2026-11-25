@@ -1,7 +1,7 @@
 """Offline tests for the REE transmission extractor."""
 import unittest
 
-from experiments.ree_transmission_geojson import REGIONS, feature_key
+from experiments.ree_transmission_geojson import COUNTRY_FILTER, REGIONS, feature_key
 
 
 class ExtractorTests(unittest.TestCase):
@@ -16,6 +16,9 @@ class ExtractorTests(unittest.TestCase):
         self.assertGreaterEqual(canaries[2], -13.0)
         self.assertLessEqual(canaries[1], 27.5)
         self.assertGreaterEqual(canaries[3], 29.5)
+
+    def test_extractor_filters_to_spanish_records(self):
+        self.assertEqual(COUNTRY_FILTER, "PAIS = 'ES'")
 
     def test_objectid_is_preferred_for_deduplication(self):
         feature = {"properties": {"OBJECTID": 42, "ID": 7}, "geometry": None}
