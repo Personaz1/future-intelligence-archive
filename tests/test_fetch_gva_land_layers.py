@@ -6,7 +6,7 @@ from experiments.fetch_gva_land_layers import SOURCES, sha256_file
 
 class GVALandLayerTests(unittest.TestCase):
     def test_both_sources_have_explicit_cc_by_metadata(self):
-        self.assertEqual(set(SOURCES), {"su_suz", "coscv_2025"})
+        self.assertEqual(set(SOURCES), {"su_suz", "coscv_2025", "zoning"})
         for source in SOURCES.values():
             self.assertIn("CC BY", source["license"])
 
@@ -14,6 +14,12 @@ class GVALandLayerTests(unittest.TestCase):
         source = SOURCES["su_suz"]
         self.assertIn("InventarioSuSuz", source["url"])
         self.assertIn("gpkg", source["url"])
+        self.assertTrue(any("informative" in item for item in source["limitations"]))
+
+    def test_zoning_is_informational_and_cc_by(self):
+        source = SOURCES["zoning"]
+        self.assertIn("Planeamiento.Zonificacion", source["url"])
+        self.assertIn("CC BY", source["license"])
         self.assertTrue(any("informative" in item for item in source["limitations"]))
 
     def test_coscv_2025_is_not_mislabelled_as_legal_zoning(self):
