@@ -29,7 +29,7 @@ SOURCES = {
             "&typename=Planeamiento.TFEFactores&version=2.0.0"
         ),
         "filename": "gva_patfor_terreno_forestal_estrategico.gpkg",
-        "signature": b"SQLite format 3\\x00",
+        "signature": b"SQLite format 3\x00",
         "dataset": "PATFOR: Terreno Forestal Estratégico por provincias",
         "license": "Creative Commons Attribution (CC BY)",
         "update_note": "Catalogue does not provide a confirmed update frequency",
