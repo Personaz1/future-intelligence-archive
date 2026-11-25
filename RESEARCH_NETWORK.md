@@ -26,6 +26,9 @@ The original Guardian ambition is not equivalent to a modern agent runtime. The 
 
 ## Research strands
 
+A cross-cutting research question is whether intelligence can be a property of a persistent system of agents, memory, tools, and environment rather than only of an individual model. See [Collective Intelligence as a System Property](research/collective-intelligence-as-system-property.md) for the initial literature-grounded synthesis and experimental questions.
+
+
 ### 1. Agents, memory, tools, and orchestration
 - [decentralized-ai-child](https://github.com/Personaz1/decentralized-ai-child) — distributed and multi-model AI experiments; see the [source-grounded dossier](research/decentralized-ai-child.md) and [preserved original research note](research/decentralized-ai-child-original-notes.md).
 - [TORI](https://github.com/Personaz1/TORI) — AGI architecture placeholder and future synthesis point.
