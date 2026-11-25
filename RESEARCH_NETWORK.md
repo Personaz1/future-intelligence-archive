@@ -68,6 +68,12 @@ A cross-cutting research question is whether intelligence can be a property of a
 **Cross-links:** these projects provide concrete domains for retrieval, document understanding, user interaction, and workflow automation. They can serve as testbeds for agent architecture ideas without implying that they already use a shared agent framework.
 
 ### 6. Security, OSINT, and adversarial context
+### 6. Energy infrastructure and spatial intelligence
+- [Grid Intelligence — Spain](research/grid-intelligence/README.md) — a research and acquisition pipeline for Spanish transmission topology, distribution-operator access-capacity publications, electrical influence zones, and evidence-based site screening.
+
+**Cross-links:** this project is a digital model of a physical infrastructure system. It connects geospatial data engineering, provenance, temporal data, network topology, regulatory methodology and applied site selection. It may later provide a concrete testbed for agentic research workflows, but it is not yet a live grid digital twin or a connection-approval system.
+
+
 - [ExploitIDE](https://github.com/Personaz1/ExploitIDE) — security-analysis IDE research.
 - [Shadowbroker-archived](https://github.com/Personaz1/Shadowbroker-archived) — archived OSINT dashboard fork.
 - [AgentX](https://github.com/Personaz1/AgentX), [NeuroRAT](https://github.com/Personaz1/NeuroRAT), [ScrScr](https://github.com/Personaz1/ScrScr) — historical dual-use research snapshots.
