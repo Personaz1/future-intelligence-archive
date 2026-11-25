@@ -135,7 +135,7 @@ def main() -> None:
         nargs="+",
         choices=tuple(SOURCES),
         default=list(SOURCES),
-        help="Select one or both source IDs",
+        help="Select one or more source IDs",
     )
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
