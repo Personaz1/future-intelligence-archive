@@ -59,3 +59,20 @@ a published capacity map does not replace an engineering connection study.
   maps or operator-origin files.
 
 See [data rights and commercial boundaries](data-rights-and-commercial-boundaries.md).
+
+
+## Valencian land/planning inputs for the pilot
+
+These are not grid-operator datasets; they provide the land-readiness side of
+the site-screening product. All four are catalogued with CC BY attribution:
+
+| ICV layer | Source status | Fields / role | Important limit |
+|---|---|---|---|
+| Planeamiento.Zonificacion | Publisher page and GeoPackage WFS request verified | Planning classification and zoning | Informative layer; binding instrument must be checked |
+| SU-SUZ | Publisher page, feature type and GeoPackage WFS request verified | Industrial/residential/tertiary/facilities use, area, buildable floor area, plan approval, PAI, reparcelation, urbanisation and basic services | Informative inventory; not proof that a parcel is immediately buildable |
+| DeclaracionInteresComunitario | Publisher page and GeoPackage WFS request verified | Non-urban parcels with recorded DIC administrative declarations | Informative case-derived layer; a DIC is not blanket permission for a new project |
+| COSCV 2025 | Publisher page and complete GeoPackage ZIP URL verified | Regional land-cover evidence | Historical 2025 edition; not legal zoning |
+
+The acquisition utility is `experiments/fetch_gva_land_layers.py`. Downloads and
+schema validation remain pending; endpoint verification is not equivalent to
+successful data ingestion.
