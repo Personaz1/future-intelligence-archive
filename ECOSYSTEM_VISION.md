@@ -13,6 +13,9 @@ The goal is not to force every project into one product or architecture. The eco
 
 ## 1. Collective intelligence
 
+The initial research treatment is in [Collective Intelligence as a System Property](research/collective-intelligence-as-system-property.md). It distinguishes biological collective problem-solving, distributed cognition, and artificial multi-agent systems, while separating functional intelligence from collective agency and consciousness.
+
+
 A network of specialised agents and models rather than one monolithic assistant.
 
 Possible capabilities:
