@@ -160,6 +160,10 @@ Never convert missing data to zero. Never combine demand and generation capacity
 This catalog should be expanded only after each new source has been opened and its schema, cadence and terms inspected.
 
 ### Comunitat Valenciana — land and planning layers with CC BY metadata
+- **PATFOR strategic forest land:** https://dadesobertes.gva.es/es/dataset/patfor-terreno-forestal-estrategico-por-provincias — CC BY; GeoPackage; delimits strategic forest land by province and records the factor used under PATFOR criteria. Catalogue does not provide a confirmed update frequency. Useful as an environmental/planning review flag, not as a parcel-specific permit decision.
+  - WFS endpoint: `https://terramapas.icv.gva.es/0506_PATFOR`
+  - Feature type: `Planeamiento.TFEFactores`
+  - GeoPackage WFS request: `https://terramapas.icv.gva.es/0506_PATFOR?outputformat=gpkg&request=GetFeature&service=WFS&typename=Planeamiento.TFEFactores&version=2.0.0`
 - **Declaraciones de Interés Comunitario (DIC):** https://dadesobertes.gva.es/dataset/declaraciones-de-interes-comunitario-de-la-comunitat-valenciana — CC BY; WFS and GeoPackage; catalogue update frequency depends on source records. Represents non-urban parcels with a recorded declaration of community interest under Valencian planning law. The publisher says the layer is informational and based on administrative case files. A DIC record is not blanket permission for a new energy project; verify the specific declaration, its conditions and municipal licence.
   - WFS endpoint: `https://terramapas.icv.gva.es/0702_Planeamiento`
   - Feature type: `DeclaracionInteresComunitario`
