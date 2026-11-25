@@ -91,3 +91,26 @@ warns that nodal values cannot be summed nationally because zones of influence
 interrelate the results. The generation page distinguishes MGES/MPE technology
 types and warns that access rights do not guarantee real-time generation or
 evacuation. Both pages say individual studies prevail.
+
+## Additional DSO coverage findings
+
+- **i-DE:** November 2026 demand and generation publications are indexed as
+  separate PDFs dated 4 November. The May 2026 generation PDF was inspected
+  structurally: it exposes connection-point IDs, affected transmission node,
+  available/occupied/under-study capacity, regulatory commitment, short-circuit
+  limitation, position counts and a `0*` flag. The November PDF files have
+  not yet been downloaded and compared column-by-column.
+- **UFD:** an official capacity publication dated 25 July 2025 was located.
+  UFD's published coordinate system is province-dependent: ETRS89 / UTM zone
+  29 for Galicia provinces and zone 30 elsewhere. Its data distinguishes
+  available, occupied and under-study capacity, and includes connection
+  position/physical-feasibility semantics. No newer November 2026 publication
+  was located in this review.
+- **Viesgo Distribución:** a public map for outages and scheduled network works
+  was verified; no public node-level access-capacity dataset was verified.
+- **E-REDES:** this is a Portuguese DSO, not a Spanish operator; excluded from
+  the Spain coverage model.
+
+These findings make a single generic DSO parser unsafe. Use operator-specific
+adapters that emit the same canonical entities while preserving each source's
+flags, units, CRS and publication semantics.
