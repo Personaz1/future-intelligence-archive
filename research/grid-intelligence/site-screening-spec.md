@@ -75,20 +75,23 @@ line may not be a feasible connection route.
 
 ## Decision logic
 
-1. Validate the site geometry and intended project profile.
-2. Identify the responsible distribution operator; do not infer it from nearest
+1. Validate that every source layer used for this commercial workflow has
+   explicit commercial reuse clearance or written permission. Keep uncleared
+   sources out of customer-facing outputs.
+2. Validate the site geometry and intended project profile.
+3. Identify the responsible distribution operator; do not infer it from nearest
    substation alone.
-3. Retrieve node-level capacity for the correct direction and technology.
-4. Preserve source states: zero, zero-star, missing, not assessed, regulatory
+4. Retrieve node-level capacity for the correct direction and technology.
+5. Preserve source states: zero, zero-star, missing, not assessed, regulatory
    commitment and under study are different.
-5. Resolve the affected transmission node and applicable electrical-influence
+6. Resolve the affected transmission node and applicable electrical-influence
    zone where the source exposes them.
-6. Evaluate the relevant transmission-side capacity and published queue context.
-7. Check position feasibility, voltage-specific application thresholds and
+7. Evaluate the relevant transmission-side capacity and published queue context.
+8. Check position feasibility, voltage-specific application thresholds and
    reinforcement dependencies.
-8. Apply land/environmental hard constraints.
-9. Return an evidence bundle, blockers, unresolved joins and next formal study
-   required.
+9. Apply land/environmental hard constraints.
+10. Return an evidence bundle, blockers, unresolved joins and next formal study
+    required.
 
 ## Scoring policy
 
@@ -132,3 +135,12 @@ province:
 
 Only after this validation should the product produce ranked commercial
 shortlists.
+
+
+## Commercial data-rights gate
+
+Before any customer-facing report, each source must have a recorded reuse status:
+permitted under an applicable licence, covered by written permission, or
+excluded from commercial outputs. Public access and mandatory publication do
+not automatically grant commercial reuse rights. See
+[data rights and commercial boundaries](data-rights-and-commercial-boundaries.md).
