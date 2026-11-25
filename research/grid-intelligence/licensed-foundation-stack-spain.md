@@ -36,6 +36,8 @@ the exact distribution and keep the required attribution and version metadata.
   https://datos.gob.es/es/catalogo/e05068001-espacios-protegidos-de-la-red-natura-2000
 - Valencian Natura 2000 management dataset:
   https://datos.gob.es/es/catalogo/a10002983-norma-de-gestion-de-los-espacios-protegidos-de-la-red-natura-2000
+- ICV Declaraciones de Interés Comunitario (CC BY):
+  https://dadesobertes.gva.es/dataset/declaraciones-de-interes-comunitario-de-la-comunitat-valenciana
 - ICV urban planning zoning (CC BY):
   https://dadesobertes.gva.es/es/dataset/planeamiento-urbanistico-de-la-comunitat-valenciana-zonificacion-urbanistica
 - ICV SU-SUZ inventory (CC BY):
