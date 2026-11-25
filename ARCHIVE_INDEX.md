@@ -18,9 +18,9 @@ This index is deliberately conservative. A repository's existence or README desc
 
 | Project | Repository / evidence | Documented status | Review notes |
 |---|---|---|---|
-| Guardian | [HOUSEGUARD/GUARDIAN](https://github.com/Personaz1/HOUSEGUARD/tree/main/GUARDIAN) · [history and source map](https://github.com/Personaz1/HOUSEGUARD/blob/main/GUARDIAN/HISTORY_AND_SOURCE_MAP.md) · [research notes](https://github.com/Personaz1/HOUSEGUARD/blob/main/GUARDIAN/AGI_RESEARCH_NOTES.md) | Historical agent prototype and architecture record | Nested in HOUSEGUARD, not a separate repository. Inspect immutable historical commits and distinguish implemented orchestration from planned capabilities. |
+| Guardian | [HOUSEGUARD/GUARDIAN](https://github.com/Personaz1/HOUSEGUARD/tree/main/GUARDIAN) · [archived research notes](research/guardian.md) · [historical source map](research/guardian-history-and-source-map.md) · [original source map](https://github.com/Personaz1/HOUSEGUARD/blob/main/GUARDIAN/HISTORY_AND_SOURCE_MAP.md) | Historical agent prototype and architecture record | Nested in HOUSEGUARD, not a separate repository. Inspect immutable historical commits and distinguish implemented orchestration from planned capabilities. |
 | decentralized-ai-child | Private repository (not publicly inspectable) | Experimental multi-model / distributed architecture; currently private | Not publicly inspectable while private. Do not infer self-evolution, consensus, self-replication, or autonomous improvement from feature labels. |
-| TORI | [Repository](https://github.com/Personaz1/TORI) · [research notes](https://github.com/Personaz1/TORI/blob/main/AGI_RESEARCH_NOTES.md) | Placeholder / future synthesis point | No unified AGI implementation is claimed. |
+| TORI | [Repository](https://github.com/Personaz1/TORI) · [archived research notes](research/tori.md) · [original notes](https://github.com/Personaz1/TORI/blob/main/AGI_RESEARCH_NOTES.md) | Placeholder / future synthesis point | No unified AGI implementation is claimed. |
 | oh-my-codex | [Repository](https://github.com/Personaz1/oh-my-codex) | Fork / upstream tooling | Attribute upstream work to Yeachan-Heo; distinguish local modifications from inherited code. |
 | claude-code | [Repository](https://github.com/Personaz1/claude-code) | Fork / source snapshot | Upstream identified as ultraworkers/claw-code in workspace notes; verify current provenance and redistribution rights before promoting. |
 
@@ -28,7 +28,7 @@ This index is deliberately conservative. A repository's existence or README desc
 
 | Project | Repository / evidence | Documented status | Review notes |
 |---|---|---|---|
-| SMARTHOUSE | [Repository](https://github.com/Personaz1/SMARTHOUSE) | Local-first home-automation skeleton / prototype | MQTT, API, configuration, and monitoring concepts; not represented as a finished autonomous home. |
+| SMARTHOUSE | [Repository](https://github.com/Personaz1/SMARTHOUSE) · [archived research notes](research/smarthouse.md) | Local-first home-automation skeleton / prototype | MQTT, API, configuration, and monitoring concepts; not represented as a finished autonomous home. |
 | HOUSEGUARD | [Repository](https://github.com/Personaz1/HOUSEGUARD) | Defensive smart-home security and assurance project | Contains the Guardian historical subproject. Review actual controls, threat model, and tests before making security claims. |
 | ha-mcp | [Repository](https://github.com/Personaz1/ha-mcp) | Fork / integration source | Preserve upstream attribution to homeassistant-ai/ha-mcp. |
 | Biocybernetic Skin | [Repository](https://github.com/Personaz1/biocybernetic-skin) | Long-horizon biointerface concept study | Conceptual research; no demonstrated clinical or physiological efficacy is claimed. |
@@ -46,8 +46,8 @@ This index is deliberately conservative. A repository's existence or README desc
 
 | Project | Repository / evidence | Documented status | Review notes |
 |---|---|---|---|
-| Quantum-Topological-Intelligence (QTI) | [Repository](https://github.com/Personaz1/Quantum-Topological-Intelligence) | Topology-inspired ML hypotheses and experiments | Not quantum computing, consciousness research, or a demonstrated replacement for neural networks. Require baselines and reproducible comparisons. |
-| TORUS | [Repository](https://github.com/Personaz1/TORUS) | Topology-inspired generative-model research | Hypotheses require empirical comparison; avoid performance claims without results. |
+| Quantum-Topological-Intelligence (QTI) | [Repository](https://github.com/Personaz1/Quantum-Topological-Intelligence) · [archived research notes](research/quantum-topological-intelligence.md) | Topology-inspired ML hypotheses and experiments | Not quantum computing, consciousness research, or a demonstrated replacement for neural networks. Require baselines and reproducible comparisons. |
+| TORUS | [Repository](https://github.com/Personaz1/TORUS) · [archived research notes](research/torus.md) | Topology-inspired generative-model research | Hypotheses require empirical comparison; avoid performance claims without results. |
 | LongGapsBetweenPrimes | [Repository](https://github.com/Personaz1/LongGapsBetweenPrimes) | Lean formalization work; forked source | Verify upstream attribution and theorem status in Lean source. |
 | Math Challenge Millennium | [Repository](https://github.com/Personaz1/math-challenge-millennium) | Forked Lean comparator / formalization workspaces | Do not imply a Millennium Prize problem has been solved unless a machine-checked proof and independent review support it. |
 
