@@ -43,6 +43,7 @@ A substation can contain multiple nodes/busbars at different voltage levels. Nev
 - source_record_ref
 
 ### CapacityObservation
+Use this entity for connection/access-capacity observations, not physical circuit ratings.
 - observation_id
 - node_id
 - operator_id
@@ -50,13 +51,47 @@ A substation can contain multiple nodes/busbars at different voltage levels. Nev
 - technology (nullable)
 - capacity_type: available | occupied | requested | granted | commissioned | operational | other
 - value
-- unit: MW | MVA | kW
+- unit: MW | kW (normalize to MW only in a derived field)
 - source_publication_date
 - retrieved_at
 - methodology_version
 - scenario
 - source_record_ref
 - caveat_codes[]
+
+### CircuitTransportRatingObservation
+Use this entity for a physical circuit's published transport/thermal rating. It is not a connection-capacity observation.
+- observation_id
+- circuit_id
+- source_operator_id
+- rating_period: month | season
+- period_key: 2026-11 | summer | winter | etc.
+- value
+- unit: MVA
+- limiting_element_code (nullable)
+- circuit_status_at_source
+- source_publication_date / source_edit_timestamp (nullable)
+- retrieved_at
+- source_record_ref
+- methodology_version / source_layer_version
+- caveat_codes[]
+
+### SourceSnapshot
+Immutable record of a retrieved source publication or API snapshot.
+- snapshot_id
+- publisher / operator_id
+- source_url
+- dataset_key
+- publication_date / publication_period
+- retrieved_at_utc
+- media_type
+- byte_size
+- sha256
+- original_filename
+- source_crs (nullable)
+- parser_name / parser_version (nullable)
+- reuse_terms_status: unknown | reviewed | permitted | restricted
+- notes
 
 ### ConnectionPositionObservation
 - node_id
@@ -97,9 +132,9 @@ Every displayed claim must point to one or more Evidence records:
 
 ## Required semantic distinctions
 
-- MW = power; MWh = energy over time; MVA = apparent power. Never silently equate them.
+- MW = active power; MWh = energy over time; MVA = apparent power. Never silently equate them.
 - Installed capacity is not instantaneous output.
-- Available access capacity is not thermal rating or guaranteed connection capacity.
+- Access capacity (MW/kW) and circuit transport rating (MVA) are separate entity types and must never be joined as if they were interchangeable.
 - Granted access is not necessarily commissioned or operational.
 - Demand access and generation access are different directions and methodologies.
 - Storage may be modelled as demand, generation, or hybrid depending on regulation and operating mode; preserve source treatment.
@@ -117,3 +152,19 @@ Every displayed claim must point to one or more Evidence records:
 - data completeness and source disagreement flags.
 
 Every derived result must carry its inputs, calculation version, date and uncertainty. Never label a screening score as a probability of receiving a permit unless calibrated against observed outcomes.
+
+
+## Source-specific implementation note (REE + e-distribución, 2026-11)
+
+REE circuit layer 11 exposes monthly fields `CAP_ENE` ... `CAP_DIC`
+(MVA) and matching `ELEM_LIM_*` fields. These map to
+`CircuitTransportRatingObservation`, not `CapacityObservation`.
+
+e-distribución publishes separate monthly demand and generation access-capacity
+files. They map to `CapacityObservation` with direction fixed by the source
+publication. Preserve each original file as a `SourceSnapshot`; only map
+columns after inspecting the downloaded header and accompanying methodology.
+
+Do not assume the REE circuit layer's `FECHA_RECARGA` is the same as the
+publication date or the retrieval timestamp. Store it as a source edit/update
+timestamp until the publisher's semantics are confirmed.
