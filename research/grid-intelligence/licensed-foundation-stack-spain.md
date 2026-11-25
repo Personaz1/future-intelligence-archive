@@ -16,6 +16,7 @@ the exact distribution and keep the required attribution and version metadata.
 | National geographic base | IGN / CNIG Download Centre | CC BY 4.0-compatible licence under Order FOM/2807/2015 | Base maps, topography, DEM, LiDAR, orthophotos | Follow exact CNIG attribution formula; product/service-specific terms may vary |
 | Cadastral parcels | Spanish Cadastre INSPIRE WFS, catalogued in datos.gob.es | CC BY 4.0 on the published dataset record | Parcel geometry, parcel identity, building/land spatial context | Do not infer legal ownership or encumbrances; inspect exact service conditions and data fields |
 | Protected areas | MITECO Natura 2000 dataset | CC BY | Hard environmental screening and distance overlays | National distribution last updated 2025-01-30 in the catalogue; check regional updates and legal designation status |
+| Strategic forest land | ICV PATFOR strategic forest land by province | CC BY | Regional strategic-forest boundaries and recorded designation factor | Catalogue has no confirmed update frequency; treat as a review flag and verify current legal status |
 | Valencian protected-area management | Generalitat Valenciana open data | CC BY | Local pilot environmental zoning in Alicante / Comunitat Valenciana | Regional dataset; confirm authoritative legal boundaries and current amendments |
 | Flood-risk zones | Official INSPIRE WMS datasets in datos.gob.es | CC BY 4.0 on catalog records | Flood exposure and exclusion / engineering-review flags | WMS is a visualization service; obtain vector source where possible and verify map scale/return period |
 | Regional generation statistics | CNMC Data portal | CC BY-SA 4.0 | Installed capacity, energy sold, technology mix, number of installations | Share-alike obligations; regional/temporal statistics, not nodal grid capacity |
@@ -36,6 +37,8 @@ the exact distribution and keep the required attribution and version metadata.
   https://datos.gob.es/es/catalogo/e05068001-espacios-protegidos-de-la-red-natura-2000
 - Valencian Natura 2000 management dataset:
   https://datos.gob.es/es/catalogo/a10002983-norma-de-gestion-de-los-espacios-protegidos-de-la-red-natura-2000
+- ICV PATFOR strategic forest land (CC BY):
+  https://dadesobertes.gva.es/es/dataset/patfor-terreno-forestal-estrategico-por-provincias
 - ICV Declaraciones de Interés Comunitario (CC BY):
   https://dadesobertes.gva.es/dataset/declaraciones-de-interes-comunitario-de-la-comunitat-valenciana
 - ICV urban planning zoning (CC BY):
