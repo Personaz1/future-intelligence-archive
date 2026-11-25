@@ -36,6 +36,10 @@ the exact distribution and keep the required attribution and version metadata.
   https://datos.gob.es/es/catalogo/e05068001-espacios-protegidos-de-la-red-natura-2000
 - Valencian Natura 2000 management dataset:
   https://datos.gob.es/es/catalogo/a10002983-norma-de-gestion-de-los-espacios-protegidos-de-la-red-natura-2000
+- ICV SU-SUZ inventory (CC BY):
+  https://dadesobertes.gva.es/es/dataset/inventario-de-suelo-urbano-y-urbanizable-su-suz-en-la-comunitat-valenciana
+- ICV COSCV 2025 land cover (CC BY):
+  https://dadesobertes.gva.es/dataset/cartografia-de-ocupacion-del-suelo-de-la-comunitat-valenciana-coscv-ano-de-edicion-2025
 - Flood-risk WMS catalogue entry:
   https://datos.gob.es/es/catalogo/e0dat0002-servicio-wms-web-map-service-areas-de-riesgo-potencial-significativo-de-inundacion-arpsi
 - CNMC Data reuse terms:
