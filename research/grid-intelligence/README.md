@@ -14,10 +14,10 @@ This is enough to begin assembling a source-grounded national data model. It is 
 
 ## Repository map
 
-- [Spain grid data source catalog](spain-grid-data-catalog.md) — official portals, service endpoints, caveats and ingestion rules.
-- [Canonical data model](grid-intelligence-data-model.md) — nodes, circuits, capacity observations, evidence and semantic distinctions.
-- [Spain pilot research brief](grid-intelligence-spain-pilot-2026-11-25.md) — commercial thesis, Alicante pilot and go/no-go criteria.
-- [REE transmission GeoJSON extractor](../experiments/ree_transmission_geojson.py) — initial utility to fetch transmission substations and circuits for mainland Spain + Balearic bounding box.
+- [Spain grid data source catalog](../spain-grid-data-catalog.md) — official portals, service endpoints, caveats and ingestion rules.
+- [Canonical data model](../grid-intelligence-data-model.md) — nodes, circuits, capacity observations, evidence and semantic distinctions.
+- [Spain pilot research brief](../grid-intelligence-spain-pilot-2026-11-25.md) — commercial thesis, Alicante pilot and go/no-go criteria.
+- [REE transmission GeoJSON extractor](../../experiments/ree_transmission_geojson.py) — initial utility to fetch transmission substations and circuits for mainland Spain + Balearic bounding box.
 
 ## Build sequence
 
