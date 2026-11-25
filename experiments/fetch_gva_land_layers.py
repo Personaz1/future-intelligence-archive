@@ -38,6 +38,22 @@ SOURCES = {
             "Use the authoritative planning instrument and competent authority for legally valid status.",
         ],
     },
+    "zoning": {
+        "url": (
+            "https://terramapas.icv.gva.es/0702_Planeamiento"
+            "?outputformat=gpkg&request=GetFeature&service=WFS"
+            "&typename=Planeamiento.Zonificacion&version=2.0.0"
+        ),
+        "filename": "gva_planning_zoning.gpkg",
+        "dataset": "Planeamiento Urbanístico de la Comunitat Valenciana: Zonificación urbanística",
+        "license": "Creative Commons Attribution (CC BY)",
+        "update_note": "Portal reports bianual update frequency",
+        "limitations": [
+            "The publisher states that the published planning layer is informative.",
+            "For legally valid zoning status, consult the actual planning instruments and competent authority.",
+            "Coverage is regional: Comunitat Valenciana.",
+        ],
+    },
     "coscv_2025": {
         "url": (
             "https://descargas.icv.gva.es/dcd/04_cubierta_usosuelo/COSCV/"
