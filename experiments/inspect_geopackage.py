@@ -41,7 +41,7 @@ def inspect_geopackage(path: Path) -> dict[str, Any]:
         if stream.read(16) != b"SQLite format 3\x00":
             raise ValueError(f"{path} is not a SQLite/GeoPackage file")
 
-    connection = sqlite3.connect(f"file:{path.resolve()}?mode=ro", uri=True)
+    connection = sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True)
     connection.row_factory = sqlite3.Row
     try:
         required = ("gpkg_contents", "gpkg_geometry_columns", "gpkg_spatial_ref_sys")
@@ -76,15 +76,16 @@ def inspect_geopackage(path: Path) -> dict[str, Any]:
         layers = []
         for item in contents:
             name = item["table_name"]
+            quoted_name = name.replace(chr(34), chr(34) * 2)
             columns = [
                 row["name"]
-                for row in connection.execute(f'PRAGMA table_info("{name}")')
+                for row in connection.execute(f'PRAGMA table_info("{quoted_name}")')
             ]
             geometry = geometries.get(name)
             count = None
             if item["data_type"] == "features":
                 count = connection.execute(
-                    f'SELECT COUNT(*) FROM "{name}"'
+                    f'SELECT COUNT(*) FROM "{quoted_name}"'
                 ).fetchone()[0]
             srs_id = (
                 geometry["srs_id"]
