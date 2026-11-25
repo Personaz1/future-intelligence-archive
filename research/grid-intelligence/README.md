@@ -24,6 +24,7 @@ This is enough to begin assembling a source-grounded national data model. It is 
 - [ICV land-layer fetcher](../../experiments/fetch_gva_land_layers.py) — downloads CC BY PATFOR forest land, DIC records, planning zoning and SU-SUZ GeoPackage/CSV for the Valencian Community; COSCV 2025 is optional.
 - [SU-SUZ readiness normalizer](../../experiments/normalize_suz_development_readiness.py) — converts the source CSV into explicit planning, reparcelation, urbanisation and service states without inferring grid capacity.
 - [Alicante readiness summary](../../experiments/summarize_suz_readiness.py) — summarizes normalized records by province and industrial land-use class; descriptive only, no buildability score.
+- [SU-SUZ data contract and QA gates](suz-data-contract.md) — provenance, field semantics, and release checks.
 - [Alicante pilot protocol](alicante-pilot-protocol.md) — stratified sample, spatial QA, source semantics and go/no-go criteria.
 - [Product wedge: industrial site readiness](product-wedge-industrial-site-readiness.md) — an evidence-dossier service for energy-intensive site acquisition.
 - [REE access-capacity fetcher](../../experiments/fetch_ree_access_capacity.py) — preserves separate transmission demand/generation CSVs with SHA-256 manifests.
