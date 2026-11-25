@@ -24,6 +24,7 @@ This is enough to begin assembling a source-grounded national data model. It is 
 - [REE acquisition status](ree-acquisition-status.md) — verified source facts, unverified steps and validation gates.
 - [Operator coverage matrix](operator-coverage-matrix.md) — current publication coverage and known gaps across Spanish DSOs.
 - [Site screening specification](site-screening-spec.md) — evidence-based first-pass site assessment for generation, storage and large demand.
+- [Data rights and commercial boundaries](data-rights-and-commercial-boundaries.md) — source-specific reuse restrictions and licensing gates.
 
 ## Build sequence
 
