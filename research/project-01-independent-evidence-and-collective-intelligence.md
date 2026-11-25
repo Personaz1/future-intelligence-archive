@@ -1,7 +1,7 @@
 # Research Project 01 — Independent Evidence and Collective Intelligence
 
 **Started:** 2026-11-25  
-**Status:** Research proposal; no discovery claimed  
+**Status:** Literature audit completed; original broad hypothesis is not novel  
 **Research area:** Network science, collective decision-making, distributed cognition, multi-agent AI
 
 ## Research question
@@ -12,13 +12,13 @@ Under what conditions does interaction improve the accuracy and adaptability of 
 
 The archive's ecosystem vision treats intelligence as potentially distributed across agents, memory, tools, and environment. This project narrows that broad idea to a measurable question: when does communication make a group better at solving a problem?
 
-The project is deliberately computational. It should be possible to conduct an initial study using mathematical models, simulations, public datasets, and reproducible code, without a wet lab or specialised hardware.
+The project is deliberately computational. Initial work can use mathematical models, simulations, public datasets, and reproducible code, without a wet lab or specialised hardware.
 
 ## Candidate central hypothesis
 
 **H1 — Delayed convergence hypothesis:** In environments where participants possess partially independent, noisy evidence, preserving private initial estimates before exposing participants to one another's conclusions can improve collective accuracy and robustness compared with immediate social influence.
 
-This is a candidate hypothesis, not a novelty claim. Related ideas exist in research on wisdom of crowds, social influence, information cascades, correlated errors, deliberation, and ensemble learning. The first task is to establish what is already known and identify a genuinely unresolved boundary condition.
+This is a candidate hypothesis, not a novelty claim. Related ideas are well established in research on wisdom of crowds, social influence, information cascades, correlated errors, deliberation, and ensemble learning.
 
 ## Secondary hypotheses
 
@@ -29,86 +29,117 @@ This is a candidate hypothesis, not a novelty claim. Related ideas exist in rese
 
 All hypotheses are falsifiable. Null and negative results are valid outcomes.
 
-## Scope and exclusions
+## Literature audit — 2026-11-25
 
-Initial scope:
-- binary and multi-class decision tasks with known ground truth;
-- agents with controllable competence, bias, and error correlation;
-- communication networks with controllable topology;
-- explicit models of private estimates, social influence, evidence sharing, and shared memory;
-- changing environments and component failures.
+The initial novelty assumption has been substantially weakened. A first-pass literature search found direct prior work covering almost every broad component of the proposal:
 
-Excluded from the initial phase:
-- claims about consciousness or subjective experience;
-- biological or clinical interventions;
-- claims that a simulated agent is equivalent to an LLM or human;
-- claims of novelty before a structured literature review;
-- treating agreement, agent count, or response volume as measures of intelligence.
+1. **Social influence and collective wisdom:** Human experiments show that even mild exposure to others' estimates can reduce diversity without improving accuracy, while other work finds that carefully structured social information can improve collective estimates. The relationship is conditional, not a simple independence-versus-discussion dichotomy.  
+   - Lorenz et al. (2011), *How social influence can undermine the wisdom of crowd effect*: https://doi.org/10.1073/pnas.1008636108  
+   - Jayles et al. (2017), *How social information can improve estimation accuracy in human groups*: https://doi.org/10.1073/pnas.1703695114  
+   - Kameda, Toyokawa & Tindale (2022), *Information aggregation and collective intelligence beyond the wisdom of crowds*: https://doi.org/10.1038/s44159-022-00054-y
 
-## Experimental design
+2. **LLM communication topology and propagation:** A 2025 EMNLP paper already studies how communication topology affects the propagation of correct and incorrect outputs, including causal interventions on individual agents.  
+   - Shen et al. (2025), *Understanding the Information Propagation Effects of Communication Topologies in LLM-based Multi-Agent Systems*: https://aclanthology.org/2025.emnlp-main.623/
 
-Compare at least these conditions under matched task instances and compute budgets:
+3. **Collective effects and group size:** A 2026 PNAS paper studies nonlinear group-size effects and collective bias in LLM populations using a controlled interaction model and mean-field analysis.  
+   - Flint et al. (2026), *Group size effects and collective misalignment in LLM multi-agent systems*: https://doi.org/10.1073/pnas.2531697123
 
-1. Independent estimates followed by majority aggregation.
-2. Immediate communication before estimates are finalised.
-3. Delayed communication after private estimates are recorded.
-4. Evidence-sharing rather than conclusion-sharing.
-5. Modular networks with controlled bridges between clusters.
-6. Fully connected and sparse network baselines.
-7. Adaptive communication rules that change based on disagreement or reliability signals.
+4. **Evidence ancestry and repeated reports:** A September 2026 preprint formalises the epistemic Sybil problem: multiple reports may descend from the same evidence, and report text alone cannot generally identify their evidential ancestry. It includes mathematical analysis and more than 20,000 controlled LLM-agent calls.  
+   - Bara (2026), *Epistemic Sybil Resistance: Multiplying AI Agents Without Multiplying Evidence*: https://arxiv.org/abs/2609.01873
+
+5. **Copies versus independent observations:** An October 2026 preprint directly measures how LLM aggregators count restated evidence and shows that relayed copies can trigger premature commitment.  
+   - Gao et al. (2026), *Copies or Sources? Measuring How LLM Aggregators Count Restated Evidence in Multi-Agent Systems*: https://arxiv.org/abs/2610.06192
+
+6. **Evidence laundering:** An EMNLP 2026 paper studies false claims replicated across paraphrased web pages and tests a structural provenance gate. This directly overlaps with the proposal's evidence-provenance direction.  
+   - Zhou et al. (2026), *Evidence Laundering: Deep Research Agents Mistake Correlated Sources for Independent Evidence*: https://aclanthology.org/2026.emnlp-main.509/
+
+7. **Shared agent memory:** A September 2026 preprint introduces a benchmark for correlated claim promotion into shared agent memory, including source-lineage tracking and consumer evaluation.  
+   - Li et al. (2026), *A Benchmark and Diagnostic Study of Epistemic Admission in Shared Agent Memory*: https://arxiv.org/abs/2609.30813
+
+8. **Adaptive communication:** Recent work already learns or optimises who communicates with whom, when to communicate, and which communication topologies are useful.  
+   - Leong et al. (2025), *AMAS: Adaptively Determining Communication Topology for LLM-based Multi-agent System*: https://aclanthology.org/2025.emnlp-industry.144/  
+   - Li et al. (2026), *Learning Who Talks to Whom: Role-Aware Communication Topology Scheduling for Efficient LLM Multi-Agent Collaboration*: https://arxiv.org/abs/2610.25851
+
+### Audit conclusion
+
+The original broad proposal — delayed communication, diversity preservation, provenance-aware aggregation, and adaptive topology — is not a defensible novelty claim. These topics have direct prior art, including very recent papers. Re-running a simplified version would be useful as a replication exercise, but should not be presented as a new discovery.
+
+This is a productive correction, not a failure. It prevents us from spending time rediscovering results already published.
+
+## Revised candidate direction: provenance under incomplete observability
+
+A possible remaining question is not simply whether provenance helps, but **what a collective system can reliably infer when provenance is incomplete, partially wrong, or unavailable**.
+
+Potential experimental factors:
+- true evidence ancestry is known to the evaluator but hidden or partially exposed to agents;
+- metadata can be missing, noisy, or deliberately misleading;
+- agents can transform evidence through summarisation, translation, quotation, and paraphrase;
+- reports can share a common source while having independent extraction errors, or come from independent sources while sharing model-induced errors;
+- the system must decide whether to aggregate, request more evidence, or abstain.
+
+Candidate research question:
+
+**Can a collective system estimate the effective number of independent evidence roots — and know when that estimate is not identifiable — under partial or unreliable provenance?**
+
+This is only a candidate. It overlaps with the papers above and must be compared against their exact methods and limitations before any novelty claim. A useful contribution may be a carefully designed benchmark of provenance uncertainty and abstention, but that remains unproven.
+
+## Experimental design if the revised direction survives review
+
+Compare:
+1. naive report-count aggregation;
+2. text-similarity deduplication;
+3. declared-source grouping;
+4. evaluator-provided true ancestry (oracle upper bound);
+5. uncertainty-aware aggregation that can abstain;
+6. adversarially corrupted or missing provenance.
 
 Vary:
-- number of participants;
-- individual competence;
-- shared and subgroup-correlated errors;
-- network topology;
-- communication timing and frequency;
-- confidence calibration;
-- environmental drift;
-- missing or unreliable participants.
+- number of true evidence roots;
+- number of reports per root;
+- semantic transformation strength;
+- extraction-error correlation;
+- provenance completeness and corruption rate;
+- proportion of adversarial reports;
+- task difficulty and prior odds.
 
-## Primary measurements
+Primary measurements:
+- posterior calibration;
+- false-confidence and premature-commitment rate;
+- accuracy and coverage;
+- abstention quality;
+- estimated effective evidence count versus true root count;
+- robustness to provenance corruption;
+- communication and compute cost.
 
-- collective accuracy and regret;
-- performance relative to the best individual and to an independent-vote baseline;
-- calibration and uncertainty quality;
-- robustness to correlated errors and misleading majorities;
-- recovery after participant failure;
-- information diversity retained over time;
-- communication cost;
-- performance on changed or unfamiliar task distributions.
+A key distinction: report similarity is not evidence ancestry. Similar reports can arise from independent sources; dissimilar reports can descend from one source.
 
-A collective should not be called more intelligent merely because it generates more discussion or reaches consensus faster.
+## Scope and exclusions
+
+- No claims about consciousness or subjective experience.
+- No claims that simulated agents are equivalent to humans.
+- No novelty claim based on a literature skim.
+- No use of consensus, agent count, or message volume as a proxy for intelligence.
+- No claim of scientific discovery from simulation alone.
 
 ## Methodological safeguards
 
-- Fix hypotheses and primary metrics before large parameter sweeps.
-- Separate exploratory runs from confirmatory runs.
-- Use multiple random seeds and report uncertainty intervals.
-- Include simple baselines and ablation tests.
+- Read the closest papers in full before finalising the question.
+- Fix hypotheses and primary metrics before confirmatory runs.
+- Separate exploratory and confirmatory experiments.
+- Use multiple seeds, confidence intervals, and simple baselines.
 - Preserve code, configurations, seeds, raw outputs, and analysis.
-- Search prior literature before describing any result as novel.
-- Have a separate critical pass attempt to falsify the leading interpretation.
-- Distinguish a new observation in our simulation from a new scientific discovery.
-
-## First milestones
-
-1. Map prior work on wisdom of crowds, social influence, information cascades, correlated errors, and network topology.
-2. Formalise a minimal generative model with controllable independent and shared error sources.
-3. Implement reproducible simulation baselines.
-4. Run exploratory experiments to identify possible effects.
-5. Design confirmatory experiments for any surviving effect.
-6. Compare the result with existing literature and public datasets.
-7. Publish code and a concise technical report only if the result survives scrutiny.
+- Include ablations and a serious attempt to falsify the leading interpretation.
+- Compare results against available public implementations and datasets.
+- Distinguish reproduction, engineering improvement, benchmark contribution, and scientific discovery.
 
 ## Capability boundary
 
 This project can be advanced with literature research, mathematical reasoning, code generation, simulation, analysis, and repository-based provenance. The current setup does not provide independent access to a physical laboratory, a panel of genuinely independent frontier models, or automatic peer review. Role-based critique within one model is not equivalent to independent replication.
 
-The strongest possible initial outcome is a reproducible computational result or a well-defined new benchmark. A claim about real human or biological collectives would require external data and independent validation.
+A credible initial outcome could be a reproducible computational result, a benchmark, or a well-defined negative result. A claim about real human or biological collectives would require external data and independent validation.
 
-## Initial position
+## Current position
 
-The working question is not whether groups are always smarter than individuals. It is whether we can identify the organisational conditions under which interaction creates reliable capability — and the conditions under which it destroys it.
+The question is not whether groups are always smarter than individuals. It is whether we can identify organisational conditions under which interaction creates reliable capability — and conditions under which it destroys it.
 
-The project begins with a hypothesis, not a conclusion.
+The broad initial hypothesis is established territory. The revised provenance-under-uncertainty direction is a lead to investigate, not a discovery.
