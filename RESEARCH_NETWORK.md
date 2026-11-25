@@ -67,7 +67,7 @@ A cross-cutting research question is whether intelligence can be a property of a
 
 **Cross-links:** these projects provide concrete domains for retrieval, document understanding, user interaction, and workflow automation. They can serve as testbeds for agent architecture ideas without implying that they already use a shared agent framework.
 
-### 6. Security, OSINT, and adversarial context
+### 7. Security, OSINT, and adversarial context
 ### 6. Energy infrastructure and spatial intelligence
 - [Grid Intelligence — Spain](research/grid-intelligence/README.md) — a research and acquisition pipeline for Spanish transmission topology, distribution-operator access-capacity publications, electrical influence zones, and evidence-based site screening.
 
