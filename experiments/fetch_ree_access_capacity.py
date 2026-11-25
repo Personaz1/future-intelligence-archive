@@ -79,7 +79,9 @@ def main() -> None:
         "network_scope": "transmission",
         "publication_date": PUBLICATION_DATE,
         "retrieved_at_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "preservation_policy": "Original bytes are retained unchanged.",
+        "preservation_policy": "Original bytes are retained unchanged; commercial reuse is not cleared by this script.",
+        "reuse_terms_status": "unknown",
+        "commercial_use_not_cleared": True,
         "sources": {},
         "interpretation_warnings": [
             "Demand and generation publications are distinct and must remain separate.",
