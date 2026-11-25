@@ -20,7 +20,8 @@ the exact distribution and keep the required attribution and version metadata.
 | Flood-risk zones | Official INSPIRE WMS datasets in datos.gob.es | CC BY 4.0 on catalog records | Flood exposure and exclusion / engineering-review flags | WMS is a visualization service; obtain vector source where possible and verify map scale/return period |
 | Regional generation statistics | CNMC Data portal | CC BY-SA 4.0 | Installed capacity, energy sold, technology mix, number of installations | Share-alike obligations; regional/temporal statistics, not nodal grid capacity |
 | Retail electricity market | CNMC Data portal | CC BY-SA 4.0 | Operator and CCAA market context, supply counts, consumption | Market statistics are not a proxy for local spare grid capacity |
-| Power plants | JRC Open Power Plants Database | CC BY 4.0 | Existing generation asset inventory and regional context | Check update date, completeness and attribution for the exact release |
+| Power plants | JRC Open Power Plants Database (JRC-PPDB-OPEN) | CC BY 4.0 | Existing generation asset inventory and regional context | 2019 snapshot; explicitly incomplete; not a live register |
+| Sector energy system context | JRC-IDEES-2023 | CC BY 4.0 | Historical sectoral energy balances and drivers through 2023, including industry and power generation | Modelled/disaggregated statistics, not site-specific metered demand |
 | Power infrastructure volunteered map | OpenStreetMap | ODbL 1.0 | Candidate substations, power lines, transformers and route geometry | Coverage and positional accuracy vary; derivative distributed databases may need ODbL share-alike |
 
 ## Direct source references
@@ -40,7 +41,8 @@ the exact distribution and keep the required attribution and version metadata.
 - CNMC Data reuse terms:
   https://data.cnmc.es/condiciones-de-uso
 - JRC Open Power Plants Database:
-  https://data.jrc.ec.europa.eu/dataset/3f9c3a55-7e5a-4a4f-a5b2-3a6e2f3b9f31
+  https://data.jrc.ec.europa.eu/dataset/9810feeb-f062-49cd-8e76-8d8cfd488a05
+- JRC-IDEES-2023: https://joint-research-centre.ec.europa.eu/what-we-do/scientific-tools-and-databases/potencia-policy-oriented-tool-energy-and-climate-change-impact-assessment/jrc-idees_en
 - OpenStreetMap copyright / ODbL:
   https://www.openstreetmap.org/copyright
 
