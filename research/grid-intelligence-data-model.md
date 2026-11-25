@@ -57,6 +57,13 @@ Use this entity for connection/access-capacity observations, not physical circui
 - methodology_version
 - scenario
 - source_record_ref
+- regulatory_commitment_flag (nullable)
+- zero_star_flag (nullable; preserve as state, not numeric zero)
+- short_circuit_limited_flag (nullable)
+- affected_transmission_node_source_id (nullable)
+- occupied_positions / free_positions (nullable)
+- connection_point_source_id / connection_point_name (nullable)
+- source_coordinates (nullable; preserve original CRS and coordinate fields)
 - caveat_codes[]
 
 ### CircuitTransportRatingObservation
